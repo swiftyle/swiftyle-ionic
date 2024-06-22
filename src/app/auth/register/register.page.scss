@@ -1,0 +1,99 @@
+.register-container {
+  font-family: var(--font-family);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* Changed to flex-start to push content up when keyboard is open */
+  align-items: flex-start;
+  min-height: 100vh;
+  /* Set min-height to ensure full viewport height */
+  background: url('/assets/images/bg/create.png') no-repeat center center fixed;
+  background-size: cover;
+  padding: 20px;
+  color: #fff;
+  box-sizing: border-box;
+  overflow-y: auto;
+
+  .title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #000;
+    margin-top: auto;
+    /* Adjust margin-top to move title up */
+    margin-bottom: 20px;
+  }
+
+  .profile-pic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--ion-color-tertiary);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-top: 20px;
+
+    ion-icon {
+      font-size: 3rem;
+      color: var(--ion-color-primary);
+    }
+  }
+
+  form {
+    width: 100%;
+    margin-top: auto;
+    /* Adjusted to make form appear at the bottom */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+  }
+
+  ion-item {
+    margin-bottom: 16px;
+    background-color: #F8F8F8;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #000;
+  }
+
+  ion-item.input-item {
+    border-radius: 50px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #000;
+  }
+
+  ion-item.input-item ion-icon {
+    color: #000;
+  }
+
+  ion-input::placeholder {
+    color: #888;
+  }
+
+  ion-button.done-button {
+    --background: var(--ion-color-primary);
+    --border-radius: 16px;
+    height: 50px;
+    margin-top: 20px;
+    line-height: 50px;
+    width: 100%;
+    margin-bottom: 20px;
+    /* Adjusted to 100% width */
+  }
+
+  .cancel-link {
+    position: relative;
+    /* Changed to relative positioning */
+    /* Adjusted for spacing */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 30px;
+    a {
+      color: #888;
+      text-decoration: none;
+    }
+  }
+}

@@ -1,0 +1,88 @@
+ion-content {
+  --ion-background-color: #ffffff;
+}
+
+.product-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  background-color: #f8f8f8;
+}
+
+.product-image-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+.product-info {
+  margin-top: -30px;
+  border-radius: 15px 15px 0 0;
+}
+
+.product-price {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.product-description {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 16px;
+}
+
+.product-variations {
+  margin-bottom: 16px;
+}
+
+.product-variations label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.variation-options ion-chip {
+  margin-right: 8px;
+}
+
+.variation-images {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.variation-images ion-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+ion-grid {
+  margin-top: 16px;
+}
+
+.same-height {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px; /* Set this to the desired button height */
+}
+
+.wishlist-button {
+  border: blue; /* Remove button border */
+}
+
+.wishlist-button .button-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Customize buy now button */
+.buy-now-button {
+  --ion-color-base: #ffffff; /* Change button background color */
+  --ion-color-contrast: #333333; /* Change button text color */
+  --ion-color-danger-contrast: #ffffff; /* Change button text color for danger variant */
+}

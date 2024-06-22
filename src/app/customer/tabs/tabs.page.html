@@ -1,0 +1,49 @@
+<ng-container *ngIf="showDefaultTabs">
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="home" routerLink="/tabs/home" routerLinkActive="active-tab" [routerLinkActiveOptions]="{ exact: true }">
+        <ion-icon aria-hidden="true" name="home-outline" *ngIf="!isRouteActive('/tabs/home')"></ion-icon>
+        <ion-icon aria-hidden="true" name="home" *ngIf="isRouteActive('/tabs/home')"></ion-icon>
+      </ion-tab-button>
+
+      <ion-tab-button tab="chat" routerLink="/tabs/chat" routerLinkActive="active-tab" [routerLinkActiveOptions]="{ exact: true }">
+        <ion-icon aria-hidden="true" name="chatbubble-outline" *ngIf="!isRouteActive('/tabs/chat')"></ion-icon>
+        <ion-icon aria-hidden="true" name="chatbubble" *ngIf="isRouteActive('/tabs/chat')"></ion-icon>
+      </ion-tab-button>
+
+      <ion-tab-button tab="wishlist" routerLink="/tabs/wishlist" routerLinkActive="active-tab" [routerLinkActiveOptions]="{ exact: true }">
+        <ion-icon aria-hidden="true" name="heart-outline" *ngIf="!isRouteActive('/tabs/wishlist')"></ion-icon>
+        <ion-icon aria-hidden="true" name="heart" *ngIf="isRouteActive('/tabs/wishlist')"></ion-icon>
+      </ion-tab-button>
+
+      <ion-tab-button tab="cart" routerLink="/tabs/cart" routerLinkActive="active-tab" [routerLinkActiveOptions]="{ exact: true }">
+        <ion-icon aria-hidden="true" name="cart-outline" *ngIf="!isRouteActive('/tabs/cart')"></ion-icon>
+        <ion-icon aria-hidden="true" name="cart" *ngIf="isRouteActive('/tabs/cart')"></ion-icon>
+      </ion-tab-button>
+
+      <ion-tab-button tab="profile" routerLink="/tabs/profile" routerLinkActive="active-tab" [routerLinkActiveOptions]="{ exact: true }">
+        <ion-icon aria-hidden="true" name="person-outline" *ngIf="!isRouteActive('/tabs/profile')"></ion-icon>
+        <ion-icon aria-hidden="true" name="person" *ngIf="isRouteActive('/tabs/profile')"></ion-icon>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ng-container>
+
+
+<ng-container *ngIf="showProductDetailTabs">
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="addToWishlist" (click)="addToWishlist()">
+        <ion-icon aria-hidden="true" name="heart-outline"></ion-icon>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="addToCart" (click)="addToCart()">
+        <ion-icon aria-hidden="true" name="cart-outline"></ion-icon>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="buy-now-button" class="tab-buy-now-button" (click)="goToCheckout()">
+        <ion-label>Buy Now</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ng-container>

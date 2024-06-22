@@ -1,0 +1,80 @@
+.checkout-section {
+    padding: 16px;
+  }
+  
+  .custom-button {
+    --background: #ffd3d3;
+    --color: #d32f2f;
+    --border-radius: 12px;
+    margin-bottom: 16px;
+    font-weight: bold;
+  }
+  
+  .item-section {
+    padding: 0 16px;
+  }
+  
+  ion-card {
+    margin: 0;
+    border: 1px solid #ffd3d3;
+    border-radius: 12px;
+  }
+  
+  ion-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  ion-card-subtitle {
+    font-weight: bold;
+    color: #d32f2f;
+  }
+  
+  ion-badge {
+    font-size: 0.8em;
+  }
+  
+  ion-thumbnail img {
+    border-radius: 8px;
+  }
+  
+  ion-label h2 {
+    font-size: 1em;
+    font-weight: bold;
+  }
+  
+  ion-label p {
+    margin: 4px 0;
+    font-size: 0.9em;
+    color: #666;
+  }
+  
+  ion-label h3 {
+    margin-top: 8px;
+    font-size: 1.1em;
+    color: #d32f2f;
+    font-weight: bold;
+  }
+  
+  .note-section {
+    padding: 16px;
+  }
+  
+  .note-section ion-textarea {
+    border: 1px solid #ffd3d3;
+    border-radius: 12px;
+    --padding-start: 12px;
+    --padding-end: 12px;
+    --padding-top: 12px;
+    --padding-bottom: 12px;
+  }
+  
+  .order-button {
+    --background: #ffd3d3;
+    --color: #d32f2f;
+    --border-radius: 12px;
+    font-weight: bold;
+    margin: 16px;
+  }
+  

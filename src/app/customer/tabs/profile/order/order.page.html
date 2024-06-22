@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar class="header-toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Pesanan Saya</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-segment value="belum-bayar">
+    <ion-segment-button value="belum-bayar">
+      <ion-label>Belum Bayar</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="dikemas">
+      <ion-label>Dikemas</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="dikirim">
+      <ion-label>Dikirim</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-card class="order-card">
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="assets/avatar.jpg" alt="Cecep.Shoes">
+      </ion-avatar>
+      <ion-label>
+        <h2>Cecep.Shoes</h2>
+        <p>Belum Bayar</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-card-content>
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <img src="assets/womans-shirt.jpg" alt="Woman's Shirt">
+        </ion-thumbnail>
+        <ion-label>
+          <h3>Woman's Shirt</h3>
+          <p>Woman Gray Round T Shirt</p>
+          <p>Rp240.000</p>
+          <p>x2</p>
+          <p>Jumlah Harus Dibayar: Rp480.000</p>
+        </ion-label>
+      </ion-item>
+      <ion-button expand="full" color="danger">Bayar Sekarang</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

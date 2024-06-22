@@ -1,0 +1,71 @@
+:host {
+  ion-content {
+    --background: #FFF;
+  }
+  .header {
+    background-color: #ff6f91;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+  }
+  .profile {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    img {
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+    }
+    .profile-info {
+      margin-left: 1rem;
+    }
+  }
+  .shop-button {
+    margin: 1rem;
+    background-color: white;
+    border: 1px solid #ff6f91;
+    color: #ff6f91;
+    text-align: center;
+    padding: 0.5rem;
+    border-radius: 10px;
+  }
+  .recently-viewed,
+  .my-orders,
+  .stories {
+    padding: 1rem;
+    h2 {
+      margin-bottom: 1rem;
+    }
+    .items {
+      display: flex;
+      overflow-x: auto;
+      img {
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        margin-right: 0.5rem;
+      }
+    }
+  }
+  .order-buttons {
+    display: flex;
+    justify-content: space-around;
+    button {
+      background-color: #ff6f91;
+      border: none;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+    }
+  }
+  .stories .story-items {
+    display: flex;
+    img {
+      border-radius: 10px;
+      width: 100px;
+      height: 150px;
+      margin-right: 0.5rem;
+    }
+  }
+}

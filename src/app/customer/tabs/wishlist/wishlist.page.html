@@ -1,0 +1,71 @@
+<ion-content>
+  <div class="top-bar" lines="none">
+    <ion-row>
+      <ion-col size="10">
+        <ion-searchbar placeholder="Search Product"></ion-searchbar>
+      </ion-col>
+      <ion-buttons slot="start">
+      </ion-buttons>
+      <ion-col size="1">
+        <ion-button (click)="goToCart()">
+          <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col size="1">
+        <ion-button (click)="goToNotifications()">
+          <ion-icon slot="icon-only" name="notifications-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </div>
+  <ion-segment>
+    <ion-segment-button value="all">
+      <ion-label>All</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="men">
+      <ion-label>Men</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="women">
+      <ion-label>Women</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="kids">
+      <ion-label>Kids</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" *ngFor="let product of products">
+        <ion-card (click)="goToItemDetail()">
+          <div class="image">
+            <ion-card>
+              <div class="discount-badge">{{ product.discount }}%</div>
+              <ion-img [src]="product.imageUrl" [alt]="product.title" />
+              <div class="card-actions">
+                <ion-button fill="clear">
+                  <ion-icon name="heart-outline"></ion-icon>
+                </ion-button>
+                <ion-button fill="clear">
+                  <ion-icon name="cart-outline"></ion-icon>
+                </ion-button>
+                <ion-button fill="clear">
+                  <ion-icon name="share-social-outline"></ion-icon>
+                </ion-button>
+              </div>
+            </ion-card>
+          </div>
+          <ion-card-header>
+            <ion-row>
+              <ion-col size="8"><ion-card-subtitle>{{ product.category }}</ion-card-subtitle></ion-col>
+              <ion-col size="4" class="rating"><ion-icon name="star"
+                  *ngFor="let star of getStars(product.rating)"></ion-icon></ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="12"><ion-card-title>{{ product.title }}</ion-card-title></ion-col>
+            </ion-row>
+            <p class="price">{{ product.price }} <span class="old-price">Rp{{ product.oldPrice }}</span></p>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Choose Address</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="address-container">
+    <div class="address-box primary">
+      <ion-icon name="home-outline" class="icon"></ion-icon>
+      <div class="address-details">
+        <div class="address-label">Address 1 (Primary)</div>
+        <div class="address-text">
+          Indah Nirmala | (+62) 881-3462-8901<br>
+          Cikampek Bumi Indah D10/33 Rt 03 Rw 04<br>
+          CIKAMPEK, KAB.KARAWANG, JAWA BARAT, ID 41373
+        </div>
+      </div>
+      <ion-button fill="clear" class="edit-button" size="small">
+        <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+      </ion-button>
+    </div>
+    <div class="address-box">
+      <ion-icon name="briefcase-outline" class="icon"></ion-icon>
+      <div class="address-details">
+        <div class="address-label">Address 2</div>
+      </div>
+      <ion-button fill="clear" class="edit-button" size="small">
+        <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+      </ion-button>
+    </div>
+    <ion-button expand="full" fill="outline" class="add-address-button">Add New Address</ion-button>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-button expand="full" class="apply-button">Apply</ion-button>
+</ion-footer>

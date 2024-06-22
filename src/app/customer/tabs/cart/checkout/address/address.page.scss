@@ -1,0 +1,62 @@
+ion-content {
+    --background: #FFD6DA;
+  
+    .address-container {
+      display: flex;
+      flex-direction: column;
+      padding: 16px;
+  
+      .address-box {
+        display: flex;
+        align-items: center;
+        background: white;
+        border-radius: 8px;
+        padding: 16px;
+        margin-bottom: 16px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        position: relative;
+  
+        &.primary {
+          border: 2px solid #FF4081;
+        }
+  
+        .icon {
+          font-size: 24px;
+          margin-right: 16px;
+        }
+  
+        .address-details {
+          flex: 1;
+  
+          .address-label {
+            font-weight: bold;
+            margin-bottom: 8px;
+          }
+  
+          .address-text {
+            font-size: 14px;
+            line-height: 1.4;
+          }
+        }
+  
+        .edit-button {
+          position: absolute;
+          top: 8px;
+          right: 8px;
+        }
+      }
+  
+      .add-address-button {
+        margin-top: 8px;
+        --border-color: #FF4081;
+        --color: #FF4081;
+      }
+    }
+  }
+  
+  ion-footer {
+    .apply-button {
+      --background: #FF8A80;
+    }
+  }
+  

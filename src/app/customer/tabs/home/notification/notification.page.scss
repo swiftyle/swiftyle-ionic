@@ -1,0 +1,95 @@
+ion-content {
+    --background: #FFD6DA;
+  
+    .notification-container {
+      display: flex;
+      flex-direction: column;
+      padding: 16px;
+  
+      .promo-box {
+        display: flex;
+        align-items: center;
+        background: white;
+        border-radius: 8px;
+        padding: 16px;
+        margin-bottom: 16px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        position: relative;
+  
+        ion-label {
+          flex: 1;
+        }
+  
+        .promo-icon {
+          font-size: 24px;
+          color: #FF4081;
+        }
+      }
+  
+      .section-title {
+        font-weight: bold;
+        margin: 16px 0;
+      }
+  
+      .notification-box {
+        display: flex;
+        align-items: center;
+        background: white;
+        border-radius: 8px;
+        padding: 16px;
+        margin-bottom: 16px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        position: relative;
+  
+        .icon {
+          font-size: 24px;
+          color: #FF4081;
+          margin-right: 16px;
+        }
+  
+        .notification-details {
+          flex: 1;
+  
+          .notification-title {
+            font-weight: bold;
+            margin-bottom: 8px;
+          }
+  
+          .notification-text {
+            font-size: 14px;
+            line-height: 1.4;
+            margin-bottom: 8px;
+          }
+  
+          .notification-time {
+            font-size: 12px;
+            color: gray;
+          }
+        }
+  
+        .chevron-icon {
+          font-size: 24px;
+          color: #FF4081;
+        }
+      }
+    }
+  }
+  
+  ion-footer {
+    --background: #FFFFFF;
+  
+    ion-tab-bar {
+      --background: #FFFFFF;
+  
+      ion-tab-button {
+        ion-icon {
+          font-size: 24px;
+        }
+  
+        ion-label {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  

@@ -1,0 +1,167 @@
+:host {
+    ion-content {
+        --background: linear-gradient(to bottom, #FAFAFA 0%, #A49DEB 88%, #38327B 100%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+    }
+
+    .verify-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        ion-img {
+            width: 70%;
+            height: auto;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: -3rem;
+            margin-top: 2rem;
+        }
+    }
+
+    .verify-container {
+        background: #FAFAFA;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        width: 100%;
+        max-width: 500px; /* Increased max-width to better fit the layout */
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 6rem; /* Centering the container */
+    }
+
+    .verify-header {
+        text-align: center;
+        margin-bottom: 20px;
+
+        ion-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        p {
+            font-size: 1rem;
+            color: #666;
+        }
+    }
+
+    .verify-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .otp-label {
+            align-self: flex-start;
+            margin-bottom: 10px;
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .verify-inputs {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 20px;
+            
+            ion-input {
+                width: 30%;
+                text-align: center;
+                font-size: 1.5rem; /* Increased font size for better visibility */
+                --padding-start: 0;
+                --padding-end: 0;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                height: 50px; /* Adjusted height to match the design */
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+        }
+
+        ion-button.primary {
+            --background: #5D3FD3; /* Adjusted to match the button color in the image */
+            --background-activated: #4B33B6;
+            --background-focused: #4B33B6;
+            --background-hover: #4B33B6;
+            --color: #FAFAFA;
+            width: 100%;
+            height: 50px; /* Adjusted height to match the design */
+            border-radius: 5px; /* Adjusted to match the design */
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+    }
+}
+
+/* Responsive Styles */
+@media (min-width: 576px) {
+    .verify-container {
+        max-width: 400px;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 6rem;
+    }
+
+    .verify-header ion-title {
+        font-size: 2rem;
+    }
+
+    .verify-header p {
+        font-size: 1.2rem;
+    }
+
+    .verify-form .verify-inputs ion-input {
+        font-size: 1.1rem;
+    }
+
+    .verify-form ion-button.primary {
+        font-size: 1.1rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .verify-container {
+        max-width: 600px;
+        margin-top: 25%; /* Centering the container */
+    }
+}
+
+@media (min-width: 992px) {
+    .verify-container {
+        max-width: 700px;
+        margin-top: 30%; /* Centering the container */
+    }
+
+    .verify-header ion-title {
+        font-size: 2.5rem;
+    }
+
+    .verify-header p {
+        font-size: 1.5rem;
+    }
+
+    .verify-form .verify-inputs ion-input {
+        font-size: 1.2rem;
+    }
+
+    .verify-form ion-button.primary {
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .verify-container {
+        max-width: 800px;
+        margin-top: 35%; /* Centering the container */
+    }
+}

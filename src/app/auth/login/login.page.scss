@@ -1,0 +1,92 @@
+.login-container {
+  font-family: var(--font-family);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background: url('/assets/images/bg/login.png') no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+  padding: 20px;
+  color: #fff;
+  position: relative; /* Ensure it is relative to adjust positions dynamically */
+
+  .title, .subtitle {
+    position: absolute;
+    left: 22px;
+    font-weight: bold;
+    color: #000;
+  }
+
+  .title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    transition: top 0.3s; /* Smooth transition */
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    transition: top 0.3s; /* Smooth transition */
+  }
+
+  form {
+    width: 100%;
+    margin-top: 50%; /* Adjusted margin for better visibility */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: margin-top 0.3s; /* Smooth transition */
+  }
+
+  ion-item {
+    margin-bottom: 16px;
+    background-color: #F8F8F8;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #000;
+    font-weight: bold;
+  }
+
+  ion-item.input-item {
+    border-radius: 50px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #000;
+  }
+
+  ion-item.input-item ion-icon {
+    color: #000;
+  }
+
+  ion-input::placeholder {
+    color: #888;
+  }
+
+  ion-button.done-button {
+    --background: var(--ion-color-primary);
+    --border-radius: 16px;
+    height: 50px;
+    margin-top: 20px;
+    line-height: 50px;
+    position: absolute;
+    bottom: 11.5%;
+    width: 89%;
+  }
+
+  .cancel-link {
+    position: absolute;
+    bottom: 7.5%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+
+    a {
+      color: #888;
+      text-decoration: none;
+    }
+  }
+}

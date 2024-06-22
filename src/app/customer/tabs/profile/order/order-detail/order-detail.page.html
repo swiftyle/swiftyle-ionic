@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Order</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Shipping Address</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      26, Duong So 2, Thao Dien Ward, An Phu, District 2, Ho Chi Minh city
+      <ion-icon name="copy-outline" slot="end" (click)="copyToClipboard('26, Duong So 2, Thao Dien Ward, An Phu, District 2, Ho Chi Minh city')"></ion-icon>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Contact Information</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      +84932000000<br>
+      amandamorgan&#64;example.com
+      <ion-icon name="copy-outline" slot="end" (click)="copyToClipboard('+84932000000')"></ion-icon>
+      <ion-icon name="copy-outline" slot="end" (click)="copyToClipboard('amandamorgan@example.com')"></ion-icon>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Items</ion-label>
+      <ion-badge color="primary">{{ items.length }}</ion-badge>
+    </ion-list-header>
+    <ion-item *ngFor="let item of items">
+      <ion-thumbnail slot="start">
+        <img [src]="item.img">
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ item.title }}</h2>
+        <p>{{ item.description }}</p>
+      </ion-label>
+      <ion-note slot="end">{{ item.price }}</ion-note>
+    </ion-item>
+  </ion-list>
+
+  <ion-item>
+    <ion-label>Shipping Options</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label>JNE</ion-label>
+    <ion-note slot="end">Standard</ion-note>
+  </ion-item>
+  <ion-item>
+    <ion-button fill="outline" slot="end" color="danger">To Receive</ion-button>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Payment Method</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label>DANA</ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Total</ion-label>
+    <ion-note slot="end">Rp340.000</ion-note>
+  </ion-item>
+
+  <ion-footer>
+    <ion-button expand="full" color="danger" (click)="refundOrder()">Refund</ion-button>
+  </ion-footer>
+</ion-content>

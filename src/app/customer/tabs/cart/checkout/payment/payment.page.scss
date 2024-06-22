@@ -1,0 +1,40 @@
+.payment-section {
+    padding: 16px;
+  }
+  
+  .custom-button {
+    --background: #ffd3d3;
+    --color: #d32f2f;
+    --border-radius: 12px;
+    margin-bottom: 16px;
+    font-weight: bold;
+  }
+  
+  ion-list {
+    padding: 0 16px;
+  }
+  
+  .payment-item {
+    --border-radius: 12px;
+    border: 1px solid #ffd3d3;
+    margin-bottom: 16px;
+  }
+  
+  .payment-item ion-icon {
+    margin-right: 12px;
+  }
+  
+  .dropdown-list {
+    margin-left: 32px;
+    border-left: 1px solid #ffd3d3;
+    padding-left: 16px;
+  }
+  
+  .apply-button {
+    --background: #ffd3d3;
+    --color: #d32f2f;
+    --border-radius: 12px;
+    font-weight: bold;
+    margin: 16px;
+  }
+  

@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Swiftlyeshop.official</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="shop-header">
+    <img src="path_to_image" alt="Profile" class="profile-img" />
+    <div class="shop-info">
+      <h2>Swiftlyeshop.official</h2>
+      <p>20 Followers | 15 Following</p>
+      <ion-icon name="star" color="warning"></ion-icon>
+      <span>4.8/5.0</span>
+      <ion-button size="small" color="secondary">Ikuti</ion-button>
+      <ion-button size="small" color="medium" fill="outline">Chat</ion-button>
+    </div>
+  </div>
+
+  <ion-segment value="products">
+    <ion-segment-button value="products">
+      <ion-label>Produk</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="categories">
+      <ion-label>Kategori</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-segment value="popular">
+    <ion-segment-button value="popular">
+      <ion-label>Populer</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="latest">
+      <ion-label>Terbaru</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="best-seller">
+      <ion-label>Terlaris</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="price">
+      <ion-label>Harga</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-card>
+    <ion-badge color="danger" slot="start">10%</ion-badge>
+    <img src="path_to_jacket_image" alt="Brown Jacket"/>
+    <ion-card-header>
+      <ion-card-title>Brown Jacket</ion-card-title>
+      <ion-card-subtitle>Men</ion-card-subtitle>
+      <ion-icon name="star" color="warning"></ion-icon>
+      <ion-icon name="star" color="warning"></ion-icon>
+      <ion-icon name="star" color="warning"></ion-icon>
+      <ion-icon name="star" color="warning"></ion-icon>
+      <ion-icon name="star-half" color="warning"></ion-icon>
+    </ion-card-header>
+    <ion-card-content>
+      <p class="price">Rp319.999 <span class="original-price">Rp400.000</span></p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

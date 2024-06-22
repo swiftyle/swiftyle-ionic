@@ -1,0 +1,33 @@
+ion-content {
+    --padding-start: 16px;
+    --padding-end: 16px;
+  }
+  
+  ion-card {
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  ion-card-header {
+    text-align: left;
+  }
+  
+  ion-card-title {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+  }
+  
+  ion-card-subtitle {
+    font-size: 1em;
+    color: gray;
+  }
+  
+  ion-button {
+    margin-top: 10px;
+  }
+  
+  ion-progress-bar {
+    margin-top: 10px;
+  }
+  

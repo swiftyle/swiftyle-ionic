@@ -1,0 +1,41 @@
+<ion-content>
+  <div class="custom-header">
+    <ion-avatar slot="start">
+      <img src="assets/img/chat-bot-avatar.png">
+    </ion-avatar>
+    <div class="header-text">
+      <h2>Chat Bot</h2>
+      <p>Customer Care Service</p>
+    </div>
+  </div>
+  
+  <div class="message-box">
+    <div class="message">
+      <p>Hello, Amanda! Welcome to Customer Care Service. We will be happy to help you. Please, provide us more details about your issue before we can start.</p>
+    </div>
+  </div>
+
+  <div class="issue-section">
+    <h3>What's your issue?</h3>
+    <div class="issue-buttons">
+      <ion-button expand="block" color="danger" (click)="selectIssue('Order Issues')" [class.selected]="selectedIssue === 'Order Issues'">Order Issues</ion-button>
+      <ion-button expand="block" fill="outline" (click)="selectIssue('Item Quality')" [class.selected]="selectedIssue === 'Item Quality'">Item Quality</ion-button>
+      <ion-button expand="block" fill="outline" (click)="selectIssue('Payment Issues')" [class.selected]="selectedIssue === 'Payment Issues'">Payment Issues</ion-button>
+      <ion-button expand="block" fill="outline" (click)="selectIssue('Technical Assistance')" [class.selected]="selectedIssue === 'Technical Assistance'">Technical Assistance</ion-button>
+      <ion-button expand="block" fill="outline" (click)="selectIssue('Other')" [class.selected]="selectedIssue === 'Other'">Other</ion-button>
+    </div>
+    <ion-button expand="block" color="danger" [disabled]="!selectedIssue">Next</ion-button>
+  </div>
+
+  <div class="message-input">
+    <ion-input placeholder="Message"></ion-input>
+    <ion-buttons>
+      <ion-button>
+        <ion-icon name="attach-outline"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon name="send-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </div>
+</ion-content>

@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Checkout</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="checkout-section">
+    <ion-button expand="block" color="light" class="custom-button">
+      Choose Delivery Address <ion-icon slot="end" name="map"></ion-icon>
+    </ion-button>
+  </div>
+
+  <div class="item-section">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>Item 1</ion-card-subtitle>
+        <ion-badge color="danger">Luxora</ion-badge>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <img src="path_to_womans_shirt_image" alt=""/>
+          </ion-thumbnail>
+          <ion-label>
+            <h2>Woman's Shirt</h2>
+            <p>Woman Gray Round T-Shirt</p>
+            <h3>Rp240.000</h3>
+          </ion-label>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <div class="checkout-section">
+    <ion-button expand="block" color="light" class="custom-button">
+      Choose Delivery Courier <ion-icon slot="end" name="bus"></ion-icon>
+    </ion-button>
+  </div>
+
+  <div class="checkout-section">
+    <ion-button expand="block" color="light" class="custom-button">
+      Choose Payment <ion-icon slot="end" name="card"></ion-icon>
+    </ion-button>
+  </div>
+
+  <div class="note-section">
+    <ion-textarea placeholder="Add a note"></ion-textarea>
+  </div>
+
+  <ion-footer>
+    <ion-button expand="block" color="secondary" class="order-button">
+      Order Now
+    </ion-button>
+  </ion-footer>
+</ion-content>

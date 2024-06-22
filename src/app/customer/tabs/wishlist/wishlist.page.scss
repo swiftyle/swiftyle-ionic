@@ -1,0 +1,144 @@
+  ion-content {
+  --background: linear-gradient(180deg, var(--ion-color-tertiary) 0%, #fff 50%, var(--ion-color-secondary) 100%) !important;
+}
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+
+  ion-row {
+    width: 100%;
+
+    ion-col {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      ion-button {
+        --color: var(--ion-color-primary) !important;
+        --font-size: 2rem !important;
+        --background: transparent;
+        --box-shadow: none;
+        --border-radius: 25px;
+      }
+    }
+  }
+
+  ion-searchbar {
+    --background: #fff;
+    --color: var(--ion-color-primary);
+    --border-radius: 25px;
+    flex-grow: 1;
+  }
+}
+ion-grid {
+  margin-top: -10px;
+  
+  ion-row {
+    ion-col {
+      padding: 0px;
+    }
+  }
+}
+
+ion-card {
+  margin: 10px;
+  position: relative;
+  border-radius:23px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: var(--ion-color-secondary);
+
+  .image {
+    background-color: var(--ion-color-secondary);
+
+    ion-card {
+      img {
+        width: 100%;
+        height: 100%;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+}
+
+.discount-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: var(--ion-color-primary);
+  color: white;
+  padding: 5px;
+  border-radius: 50%;
+  font-size: 10px;
+  z-index: 10; // Ensure it appears above other elements
+}
+
+ion-card-header {
+  position: relative;
+  background-color: #fff;
+}
+
+ion-card-subtitle {
+  font-size: 10px;
+  color: #888;
+  text-align: left;
+}
+
+ion-card-title {
+  font-size: 12px;
+  font-weight: bold;
+  text-align: left;
+
+}
+
+.rating {
+  font-size: 10px; // Smaller star size
+  color: #FBD103;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  right: 5px;
+}
+
+ion-card-content {
+  text-align: center;
+  background-color: #fff;
+}
+
+.price {
+  font-size: 12px;
+  color: var(--ion-color-primary);
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #888;
+  margin-left: 10px;
+}
+
+.card-actions {
+  position: absolute;
+  
+  top: 3rem;
+  right: 5px; // Position on the right side
+  display: flex;
+  flex-direction: column; // Stack icons vertically
+  z-index: 10; // Ensure buttons are above the image
+}
+
+.card-actions ion-button {
+  --background: #fff;
+  --background-color: #fff;
+  --border-radius: 50%;
+  --color: var(--ion-color-primary);
+  font-size: 10px;
+  margin: 0px;
+  
+
+  &:hover {
+    --background: #fff; // Keep background transparent on hover
+    --color: var(--ion-color-primary); // Maintain color on hover
+  }
+}

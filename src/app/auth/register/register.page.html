@@ -1,0 +1,31 @@
+<ion-content>
+  <div class="register-container">
+    <div class="title">
+      <span>Create</span><br>
+      <span>Account</span>
+    </div>
+    <div class="profile-pic">
+      <ion-icon name="camera-outline"></ion-icon>
+    </div>
+    <form>
+      <ion-item class="input-item">
+        <ion-input type="email" placeholder="Email"></ion-input>
+      </ion-item>
+      <ion-item class="input-item">
+        <ion-input type="password" placeholder="Password"></ion-input>
+        <ion-icon slot="end" name="eye-off-outline"></ion-icon>
+      </ion-item>
+      <ion-item class="input-item">
+        <ion-select interface="popover" placeholder="Country Code">
+          <ion-select-option value="+62">🇮🇩 +62</ion-select-option>
+          <!-- Add other country codes here -->
+        </ion-select>
+        <ion-input type="tel" placeholder="Your number"></ion-input>
+      </ion-item>
+      <ion-button expand="block" class="done-button" href="login">Done</ion-button>
+      <div class="cancel-link">
+        <a href="choose">Cancel</a>
+      </div>
+    </form>
+  </div>
+</ion-content>

@@ -1,0 +1,30 @@
+<ion-content>
+  <div class="custom-header">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <div class="title">Chat</div>
+  </div>
+  <div class="search-bar">
+    <ion-searchbar [(ngModel)]="searchTerm" placeholder="Search"></ion-searchbar>
+  </div>
+
+  <ion-list>
+    <ion-item *ngFor="let chat of filteredChats">
+      <ion-avatar slot="start">
+        <img [src]="chat.avatar">
+      </ion-avatar>
+      <ion-label>
+        <h2>{{ chat.name }}</h2>
+        <p>{{ chat.message }}</p>
+      </ion-label>
+      <ion-badge slot="end" *ngIf="chat.unreadCount > 0">{{ chat.unreadCount }}</ion-badge>
+    </ion-item>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="chatbubbles-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
