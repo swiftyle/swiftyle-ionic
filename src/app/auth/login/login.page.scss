@@ -1,0 +1,99 @@
+ion-content {
+  --background: none;
+  font-family: var(--font-family);
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    min-height: 100vh;
+    padding: 20px;
+    color: #fff;
+    box-sizing: border-box;
+
+    .background-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .content {
+      position: relative;
+      text-align: center;
+      width: 100%;
+      max-width: 350px;
+      // padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+
+      .title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #000;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        text-align: start;
+      }
+
+      .subtitle {
+        font-size: 1rem;
+        font-weight: bold;
+        color: #00000076;
+        margin-bottom: 20px;
+        text-align: start;
+
+        ion-icon {
+          vertical-align: middle;
+        }
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-top: 20px;
+      }
+
+      ion-item.input-item {
+        width: 100%;
+        margin-bottom: 16px;
+        background-color: #f8f8f8;
+        border-radius: 50px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        color: #000;
+      }
+
+      ion-item.input-item ion-icon {
+        color: #000;
+      }
+
+      ion-input::placeholder {
+        color: #888;
+      }
+
+      ion-button.done-button {
+        --background: var(--ion-color-primary);
+        --border-radius: 16px;
+        height: 50px;
+        width: 100%;
+        margin-top: 20px;
+      }
+
+      .cancel-link {
+        margin-top: 20px;
+        font-size: 14px;
+
+        a {
+          color: #888;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

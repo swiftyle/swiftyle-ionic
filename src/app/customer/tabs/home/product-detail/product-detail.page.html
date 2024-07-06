@@ -1,0 +1,140 @@
+<div class="ion-page" #page>
+  <ion-content>
+    <ion-modal #modal [canDismiss]="canDismiss" [presentingElement]="page">
+      <ng-template>
+        <ion-content class="ion-padding">
+          <div class="product-container">
+            <img [src]="product.imageUrl" [alt]="product.name" class="img" alt=""/>
+            <div class="details">
+              <h2 class="price">Rp{{ product.price }}</h2>
+              <h2 class="price">{{ product.name }}</h2>
+              <ion-button *ngFor="let color of product.sizes[0].colors" size="small" class="btn-m" (click)="selectedColor(color)">{{ color.name }}</ion-button>
+              <ion-button *ngFor="let size of product.sizes" size="small" class="btn-m" (click)="selectedSize(size)">{{ size.name }}</ion-button>
+            </div>
+          </div>
+          <h1 class="text">Color Options</h1>
+          <div class="variation-images">
+            <ion-img *ngFor="let size of product.sizes" [src]="size.colors[0]?.imageUrl" alt="{{ size.colors[0]?.name }}"></ion-img>
+          </div>
+          <h1 class="text">Size</h1>
+          <div class="variation-buttons">
+            <ion-button *ngFor="let size of product.sizes" size="small" class="brown-m-button" (click)="selectedSize(size)">{{ size.name }}</ion-button>
+          </div>
+          <div class="quantity-container">
+            <label class="text" for="quantity">Quantity</label>
+            <div class="quantity-input">
+              <button type="button" class="quantity-btn" (click)="decrementQuantity()">-</button>
+              <input class="number" type="number" id="quantity" name="quantity" min="1" [value]="quantity" readonly>
+              <button type="button" class="quantity-btn" (click)="incrementQuantity()">+</button>
+            </div>
+          </div>
+          <ion-grid class="button-modal">
+            <ion-row>
+              <ion-col size="2">
+                <ion-icon size="large" name="heart-outline" class="icon"></ion-icon>
+              </ion-col>
+              <ion-col size="5">
+                <ion-button expand="block" class="btn">Add to cart</ion-button>
+              </ion-col>
+              <ion-col size="5">
+                <ion-button expand="block" color="primary" class="buy-now-button same-height">Buy now</ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+    <ion-content *ngIf="product">
+      <img [src]="product.imageUrl" [alt]="product.name" alt=""/>
+      <ion-card-content>
+        <h2 class="product-price">Rp{{ product.price }}</h2>
+        <h2>{{ product.subcategories[0]?.main_category.name }} - {{ product.subcategories[0]?.name }}</h2>
+        <h2 class="product-price">{{ product.name }}</h2>
+        <p class="product-description">{{ product.description }}</p>
+        <div class="product-variations">
+          <div class="variations-header">
+            <label>Variations</label>
+            <div class="variation-buttons">
+              <ion-button *ngIf="selectedColor" size="small" class="brown-m-button">{{ selectedColor.name }}</ion-button>
+              <ion-button *ngIf="selectedSize" size="small" class="brown-m-button">{{ selectedSize.name }}</ion-button>
+              <ion-button size="small" class="see-all-button" (click)="openSeeAllModal()">See All</ion-button>
+            </div>
+          </div>
+        </div>
+        <div class="variation-images">
+          <ion-img *ngFor="let size of product.sizes" [src]="size.colors[0]?.imageUrl" alt="{{ size.colors[0]?.name }}"></ion-img>
+        </div>
+        <h2 class="text">Specifications</h2>
+        <div class="specifications">
+          <div class="material">
+            <p style="font-size: 15px;">Material</p>
+          </div>
+          <ion-chip style="--background: #FFEBEB;">Cotton 95%</ion-chip>
+          <ion-chip style="--background: #FFEBEB;">Nylon 5%</ion-chip>
+          <div class="origin">
+            <p>Origin</p>
+          </div>
+          <ion-chip>EU</ion-chip>
+          <div class="size-guide">
+            <p>Size guide</p>
+            <ion-button fill="clear" size="small">
+              <ion-icon name="arrow-forward-circle-outline"></ion-icon>
+            </ion-button>
+          </div>
+        </div>
+        <h2 class="text">Delivery</h2>
+        <div class="delivery">
+          <ion-card>
+            <ion-card-content>
+              <div class="delivery-option">
+                <p>Standard</p>
+                <span>5-7 days</span>
+                <strong>$3,00</strong>
+              </div>
+            </ion-card-content>
+          </ion-card>
+          <ion-card>
+            <ion-card-content>
+              <div class="delivery-option">
+                <p>Express</p>
+                <span>1-2 days</span>
+                <strong>$12,00</strong>
+              </div>
+            </ion-card-content>
+          </ion-card>
+        </div>
+        <h2 class="text">Rating & Reviews</h2>
+        <div class="reviews">
+          <div class="review-summary">
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star-half-outline"></ion-icon>
+            <span>4/5</span>
+          </div>
+          <div class="review">
+            <ion-avatar>
+              <img src="path_to_avatar_image" alt="" />
+            </ion-avatar>
+            <div>
+              <strong>Veronika</strong>
+              <p>Lorem ipsum dolor sit amet...</p>
+            </div>
+          </div>
+          <ion-button class="bg" expand="full" fill="clear">View All Reviews</ion-button>
+        </div>
+        <h2>You Might Like</h2>
+        <div class="suggestions">
+          <div *ngFor="let item of suggestedItems" class="suggestion-card">
+            <ion-card>
+              <img [src]="item.imageUrl" class="suggestion-image" alt="" />
+            </ion-card>
+            <p class="suggestion-name">{{ item.name }}</p>
+            <strong class="suggestion-price">{{ item.price }}</strong>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-content>
+  </ion-content>
+</div>

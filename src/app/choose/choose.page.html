@@ -1,0 +1,43 @@
+<ion-content>
+  <div class="container">
+    <img src="assets/images/bg/create.png" class="background-image" alt="" />
+    <div class="content">
+      <h2>Create Account</h2>
+      <p>How you would like to create an account?</p>
+      <ion-list>
+        <ion-radio-group [(ngModel)]="selectedOption">
+          <ion-item lines="none" class="custom-item" [class.selected]="selectedOption === 'email'"
+            (click)="selectOption('email')">
+            <ion-label>
+              <ion-icon name="mail" slot="start"></ion-icon>
+              Email
+            </ion-label>
+            <ion-radio slot="end" value="email"></ion-radio>
+          </ion-item>
+          <ion-item lines="none" class="custom-item" [class.selected]="selectedOption === 'google'"
+            (click)="selectOption('google')">
+            <ion-label>
+              <ion-icon name="logo-google" slot="start"></ion-icon>
+              Google
+            </ion-label>
+            <ion-radio slot="end" value="google"></ion-radio>
+          </ion-item>
+          <ion-item lines="none" class="custom-item" [class.selected]="selectedOption === 'facebook'"
+            (click)="selectOption('facebook')">
+            <ion-label>
+              <ion-icon name="logo-facebook" slot="start"></ion-icon>
+              Facebook
+            </ion-label>
+            <ion-radio slot="end" value="facebook"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+      </ion-list>
+    </div>
+    <div class="button-group">
+      <ion-button expand="block" color="primary" (click)="next()">Next</ion-button>
+      <div class="cancel-link">
+        <a href="start">Cancel</a>
+      </div>
+    </div>
+  </div>
+</ion-content>

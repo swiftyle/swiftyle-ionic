@@ -1,0 +1,28 @@
+<ion-content [fullscreen]="true">
+  <div class="settings-container">
+    <div class="settings-title">Settings</div>
+    <div class="profile-container">
+      <h2>Your Profile</h2>
+      <div class="profile-pic" (click)="onProfilePicClick()">
+        <img *ngIf="avatarUrl" [src]="avatarUrl" alt="Profile Picture" />
+        <ion-icon *ngIf="!avatarUrl" name="camera-outline"></ion-icon>
+      </div>
+      <input type="file" (change)="onFileSelected($event)" accept="image/*" hidden #fileInput />
+      <ion-list>
+        <ion-item>
+          <ion-label position="floating">Name</ion-label>
+          <ion-input placeholder="Name" [(ngModel)]="user.name"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Username</ion-label>
+          <ion-input placeholder="Username" [(ngModel)]="user.username"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input type="email" placeholder="Email" [(ngModel)]="user.email"></ion-input>
+        </ion-item>
+      </ion-list>
+    </div>
+    <ion-button expand="block" color="primary" class="save-button" (click)="saveChanges()">Save Changes</ion-button>
+  </div>
+</ion-content>

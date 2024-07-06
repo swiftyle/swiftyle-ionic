@@ -1,0 +1,305 @@
+.profile-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+  color: var(--ion-color-primary);
+  height: 120px;
+  background: var(--ion-color-primary);
+  margin-top: -10px;
+  /* Set the text color to match the icon color */
+}
+
+.profile-header ion-avatar {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #ffffff;
+  /* Updated border color to match icon color */
+  border-radius: 50%;
+}
+
+.profile-info {
+  flex-grow: 1;
+  padding-left: 15px;
+}
+
+.profile-info h2 {
+  margin: 0;
+  font-size: 24px;
+  color: #ffffff;
+  /* Updated text color */
+}
+
+.profile-info p {
+  margin: 0;
+  color: #ffffff;
+  /* Updated text color */
+  font-size: 15px;
+}
+
+/* Styles for the new icons */
+.profile-icons {
+  margin-right: -5px;
+  display: flex;
+  gap: 10px;
+}
+
+.icon-wrapper {
+  background-color: #f8f8f8;
+  /* Set background color for icons */
+  width: 30px;
+  /* Set width for icons */
+  height: 30px;
+  /* Set height for icons */
+  border-radius: 15px;
+  /* Rounded corners */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-icons ion-icon {
+  font-size: 20px;
+  color: var(--ion-color-primary);
+  /* Set icon color */
+}
+
+ion-list {
+  z-index: 1;
+  margin-top: 10px;
+}
+
+ion-item {
+  --inner-padding-top: 10px;
+  --inner-padding-bottom: 10px;
+  background: white;
+  border-radius: 10px;
+  margin: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.avatar-wrapper {
+  margin-top: -20px;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.avatar-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+ion-label h2 {
+  font-size: 1em;
+  font-weight: bold;
+  margin-left: 12px;
+}
+
+ion-label p {
+  font-size: 0.9em;
+  margin-left: 12px;
+  color: #666;
+}
+
+.review-button {
+  --border-color: var(--ion-color-primary);
+  --color: var(--ion-color-primary);
+  --border-radius: 10px;
+  --padding-start: 10px;
+  --padding-end: 10px;
+  --min-height: 30px;
+  height: 35px;
+}
+
+.review-button::part(native) {
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+.review-modal-content {
+  --background: #f8f8f8;
+}
+
+.review-container {
+  padding: 16px;
+}
+
+.review-container ion-item {
+  --background: #f8f8f8;
+}
+
+.review-container .stars {
+  display: flex;
+  margin: 16px 0;
+}
+
+.review-container .stars ion-icon {
+  font-size: 32px;
+  color: #ffd700;
+  margin: 0 4px;
+}
+
+.review-container ion-textarea {
+  background-color: #ffecec;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.submit-button {
+  background-color: #f26464;
+  color: white;
+}
+
+.title-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.my-orders {
+  margin-left: -20px;
+  margin-right: 15px;
+  margin-top: 5px;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.item-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.order-text {
+  text-transform: capitalize;
+  font-size: 15px;
+  color: black;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2px;
+  margin-bottom: 10px;
+}
+
+.product-item {
+  overflow: hidden;
+}
+
+.product-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Full size for single image but styled as a single cell */
+.single {
+  grid-column: span 2;
+  height: 100px;
+  width: 102px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Stacked vertically for two images */
+.half {
+  height: 50px;
+  grid-column: span 2;
+  width: 102px;
+}
+
+.grid-3 .product-item:nth-child(3) {
+  grid-column: span 2;
+  height: 50px;
+}
+
+.grid-3 .product-item:nth-child(1),
+.grid-3 .product-item:nth-child(2) {
+  height: 50px;
+}
+
+.wide {
+  grid-column: span 2;
+}
+
+/* New CSS for grid-4 */
+.grid-4 .product-item:nth-child(1),
+.grid-4 .product-item:nth-child(2),
+.grid-4 .product-item:nth-child(3),
+.grid-4 .product-item:nth-child(4) {
+  height: 50px;
+  width: 50px;
+}
+
+.item-info {
+  display: flex;
+  align-items: center;
+}
+
+.detail-button {
+  --background: var(--ion-color-primary);
+  color: #fff;
+  border-radius: 10px;
+}
+
+.product-grid-modal {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2px;
+  margin-bottom: 10px;
+}
+
+.product-item-modal {
+  overflow: hidden;
+}
+
+.product-item-modal img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.single-modal {
+  grid-column: span 2;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.half-modal {
+  height: 50px;
+  grid-column: span 2;
+}
+
+.grid-3-modal .product-item-modal:nth-child(3) {
+  grid-column: span 2;
+  height: 50px;
+  width: 100px;
+}
+
+.grid-3-modal .product-item-modal:nth-child(1),
+.grid-3-modal .product-item-modal:nth-child(2) {
+  height: 50px;
+  width: 50px;
+}
+
+.wide-modal {
+  grid-column: span 2;
+}
+
+.grid-4-modal .product-item-modal:nth-child(1),
+.grid-4-modal .product-item-modal:nth-child(2),
+.grid-4-modal .product-item-modal:nth-child(3),
+.grid-4-modal .product-item-modal:nth-child(4) {
+  height: 50px;
+  width: 50px;
+}

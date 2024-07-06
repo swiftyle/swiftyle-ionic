@@ -1,0 +1,201 @@
+ion-content {
+  font-family: var(--font-family);
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    text-align: center;
+    position: relative;
+    padding-top: 20px;
+    /* Mengurangi padding-top untuk menggeser ke atas */
+
+    .background-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    swiper-container {
+      width: 100%;
+      height: 100%;
+
+      swiper-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
+    }
+
+    .preference-card,
+    .final-card {
+      width: 80%;
+      max-width: 400px;
+      margin: 10px auto;
+      /* Mengurangi margin-top untuk lebih rapat */
+      padding: 20px;
+      border-radius: 30px;
+      box-shadow: 0 10px 37px rgba(0, 0, 0, 0.1608);
+      text-align: center;
+      background-color: #fff;
+    }
+
+    .preference-card h2,
+    .final-card h2 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .preference-card p,
+    .final-card p {
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    .preference-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 5px;
+      /* Mengurangi jarak antar kolom */
+      justify-content: center;
+    }
+
+    .style {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 5px;
+      width: 60px;
+      height: 80px;
+      background: transparent;
+      border-radius: 50%;
+      transition: transform 0.2s;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      &.selected {
+        background: transparent;
+      }
+
+      .style-image {
+        position: relative;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 4px solid rgba(255, 255, 255, 1);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1608);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: visible;
+        /* Pastikan overflow visible */
+        position: relative;
+        /* Pastikan posisi relatif */
+
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 50px;
+        }
+
+      }
+
+      .style-name {
+        font-size: 0.8em;
+        /* Mengurangi ukuran font */
+        color: #333;
+      }
+
+      .check-badge {
+        position: absolute;
+        top: -10px;
+        /* Sesuaikan dengan posisi yang diinginkan */
+        right: -10px;
+        /* Sesuaikan dengan posisi yang diinginkan */
+        background-color: var(--ion-color-primary);
+        color: white;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        font-weight: bold;
+        border: 2px solid #fff;
+        z-index: 10;
+        /* Pastikan z-index lebih tinggi */
+      }
+    }
+
+    .final-card .card-image {
+      width: 100%;
+      height: 300px;
+      /* Sesuaikan tinggi gambar */
+      overflow: hidden;
+      border-radius: 12px 12px 0 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+      /* Tambahkan margin bawah */
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .final-card .card-text {
+      padding: 0 20px;
+      text-align: center;
+
+      h2 {
+        margin-top: 20px;
+      }
+
+      ion-card-content {
+        ion-button {
+          margin-top: 20px;
+          --border-radius: 16px;
+        }
+      }
+    }
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+
+  .page-dot {
+    width: 15px;
+    /* Memperbesar ukuran titik */
+    height: 15px;
+    /* Memperbesar ukuran titik */
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    margin: 0 5px;
+
+    &.active {
+      background-color: var(--ion-color-primary);
+      /* Warna primary untuk titik aktif */
+    }
+  }
+}

@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cart</ion-title>
+    <ion-buttons slot="end">
+      <ion-badge color="danger">{{ items.length }}</ion-badge>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="shipping-address-card">
+    <ion-card-header>
+      <ion-card-title>Shipping Address</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item lines="none">
+        <ion-label>{{ address }}</ion-label>
+        <ion-button fill="clear" slot="end" (click)="openModal()">
+          <ion-icon slot="icon-only" name="pencil-outline"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngFor="let item of items">
+    <ion-card-header>
+      <ion-card-title>{{ item.description }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-img [src]="item.img"></ion-img>
+      <p>Price: {{ item.price }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-item>
+    <ion-label>Total:</ion-label>
+    <ion-label>{{ total }}</ion-label>
+  </ion-item>
+
+  <ion-button expand="block" (click)="confirmOrder()">Confirm Order</ion-button>
+
+  
+</ion-content>

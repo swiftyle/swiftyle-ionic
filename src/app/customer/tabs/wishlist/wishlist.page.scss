@@ -1,0 +1,231 @@
+.top-bar {
+  background-color: var(--ion-color-primary);
+  padding: 10px;
+  height: 100px;
+}
+
+.bar h1 {
+  font-size: 30px;
+  color: white;
+  margin: 0;
+}
+
+ion-badge {
+  color: black;
+  background: white;
+  border-radius: 20px;
+  font-size: 20px;
+  width: 30px;
+  height: 30px;
+}
+
+ion-searchbar {
+  --background: white;
+  --placeholder-color: #ccc;
+  --color: var(--ion-color-primary);
+  --border-radius: 20px;
+  width: 108%;
+  margin-left: -12px;
+}
+
+.wishlist-items {
+  padding: 10px;
+}
+
+.wishlist-item {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+  // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.wishlist-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 10px;
+}
+
+.details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.icons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 80px;
+}
+
+.icon-trash,
+.icon-cart {
+  color: var(--ion-color-primary);
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.icon-trash {
+  align-self: flex-end;
+}
+
+.prices {
+  display: flex;
+  align-items: baseline;
+}
+
+.current-price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+}
+
+.old-price {
+  font-size: 14px;
+  color: #999;
+  text-decoration: line-through;
+  margin-left: 10px;
+}
+
+.attributes {
+  display: flex;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.attribute {
+  background-color: var(--ion-color-tertiary);
+  color: #000;
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 14px;
+}
+
+.center-container {
+  margin-top: -100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.heart-icon-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.heart-icon {
+  font-size: 50px;
+  color: var(--ion-color-primary);
+  z-index: 1;
+  position: relative;
+  /* Tambahkan untuk menempatkan ikon hati di depan */
+}
+
+.sunburst {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ray {
+  margin-bottom: 25px;
+  position: absolute;
+  width: 2px;
+  height: 25px;
+  background-color: var(--ion-color-primary);
+  border-radius: 1px;
+  transform-origin: bottom;
+}
+
+.ray:nth-child(1) {
+  transform: rotate(0deg) translate(-50%, -100%);
+}
+
+.ray:nth-child(2) {
+  transform: rotate(30deg) translate(-50%, -100%);
+}
+
+.ray:nth-child(3) {
+  transform: rotate(60deg) translate(-50%, -100%);
+}
+
+.ray:nth-child(4) {
+  transform: rotate(90deg) translate(-50%, -100%);
+}
+
+.ray:nth-child(5) {
+  transform: rotate(120deg) translate(-50%, -100%);
+}
+
+.ray:nth-child(6) {
+  transform: rotate(150deg) translate(-50%, -100%);
+}
+
+.ray:nth-child(7) {
+  transform: rotate(180deg) translate(-50%, -100%);
+}
+
+.ray:nth-child(8) {
+  transform: rotate(210deg) translate(-50%, -100%);
+}
+
+.ray:nth-child(9) {
+  transform: rotate(240deg) translate(-50%, -100%);
+}
+
+.ray:nth-child(10) {
+  transform: rotate(270deg) translate(-50%, -100%);
+}
+
+.ray:nth-child(11) {
+  transform: rotate(300deg) translate(-50%, -100%);
+}
+
+.ray:nth-child(12) {
+  transform: rotate(330deg) translate(-50%, -100%);
+}
+
+select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: var(--ion-color-tertiary);
+  font-size: 14px;
+}
+
+select:focus {
+  outline: none;
+  border-color: var(--ion-color-primary);
+  box-shadow: 0 0 5px rgba(231, 92, 105, 0.5);
+}
+
+.attributes select {
+  margin-right: 10px;
+}
+
+/* Change the dropdown hover and active color */
+select option:hover, 
+select option:active {
+  background-color: var(--ion-color-primary);
+}

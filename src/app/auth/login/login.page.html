@@ -1,0 +1,22 @@
+<ion-content>
+  <div class="container">
+    <img src="assets/images/bg/login.png" class="background-image" alt="" />
+    <div class="content">
+      <div class="title">
+        <span>Login</span>
+      </div>
+      <div class="subtitle">
+        <span>Good to see you back <ion-icon name="heart"></ion-icon></span>
+      </div>
+      <form (submit)="next()">
+        <ion-item class="input-item">
+          <ion-input [(ngModel)]="email" name="email" type="email" placeholder="Email"></ion-input>
+        </ion-item>
+        <ion-button expand="block" class="done-button" type="submit">Next</ion-button>
+        <div class="cancel-link">
+          <a href="start">Cancel</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</ion-content>

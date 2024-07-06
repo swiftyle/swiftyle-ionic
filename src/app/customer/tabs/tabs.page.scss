@@ -1,0 +1,146 @@
+ion-tabs {
+  border-radius: 25px;
+
+  ion-tab-bar {
+    position: relative;
+    height: 70px;
+    border-radius: 25px 25px 0px 0px;
+
+    ion-tab-button span {
+      font-size: 12px;
+    }
+
+    ion-tab-button {
+      --transition: none; /* Nonaktifkan semua transisi */
+      --ripple-color: transparent; /* Nonaktifkan ripple effect */
+      
+      /* Optional: Remove background color change on click */
+      --background-focused: transparent;
+      --background-selected: transparent;
+
+      &:hover {
+        /* Optional: Customize hover effect if needed */
+        border-color: #fff;
+        color: var(--ion-color-primary);
+      }
+
+      &:hover ion-icon {
+        color: var(--ion-color-primary);
+        border-color: var(--ion-color-primary);
+      }
+
+      &:hover span {
+        color: #fff;
+        border-color: var(--ion-color-primary);
+      }
+    }
+  }
+}
+
+ion-tab-button:hover {
+  /* Remove hover background color change */
+  background-color: transparent;
+}
+
+
+
+
+.tab-buy-now-button {
+  font-size: 1.5rem !important;
+  /* Ubah ukuran font menjadi 1.5rem atau sesuaikan dengan kebutuhan Anda */
+  font-weight: bold;
+  /* Tambahkan ketebalan font jika diperlukan */
+  padding: 20px 70px !important;
+}
+
+.custom-footer {
+  background: #fafafa;
+
+  ion-tab-bar {
+    position: relative;
+    width: 95%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    border-radius: 40px;
+    padding-bottom: 0;
+    border: 1px solid rgba(2, 52, 54, 0.08);
+    overflow: hidden;
+    box-shadow: 0px -5px 10px rgb(3 181 170 / 8%);
+    height: 80px;
+    --background: #fafafa;
+
+    ion-tab-button {
+      --background: #fafafa;
+      --color: var(--ion-color-primary);
+
+      ion-icon {
+        font-size: 1.9rem;
+      }
+    }
+  }
+
+  ion-tab-button span {
+    font-size: 12px;
+  }
+
+  /* Hover effect */
+  ion-tab-button:hover {
+    background-color: var(--ion-color-primary);
+    border-color: #fff;
+    /* Swap background color */
+    color: #fff;
+
+    ion-label {
+      color: #fff;
+    }
+
+    /* Swap text color */
+  }
+
+  ion-tab-button:hover ion-icon {
+    color: #fff;
+    border-color: var(--ion-color-primary);
+    /* Ensure icon color also swaps */
+  }
+
+  ion-tab-button:hover span {
+    color: #fff;
+    border-color: var(--ion-color-primary);
+    /* Ensure text color also swaps */
+
+  }
+}
+
+.btn {
+  --border-radius: 11px;
+  font-size: 12px;
+  height: 50px;
+  width: 15vh; 
+}
+
+.buy-now-button {
+  --ion-color-base: #ffffff; /* Change button background color */
+  --ion-color-danger-contrast: #ffffff; /* Change button text color for danger variant */
+}
+
+.btn-1 {
+  --background: #E75C69;
+  --border-radius: 11px;
+  width: 14vh;
+  height: 50px;
+}
+
+.tab-button {
+  width: 100%;
+  margin-bottom: 25px;
+  margin-top: -10px;
+}
+
+.btn-tab {
+  margin-left: -15px;
+  margin-right: 10px;
+}
+
+.icon-love {
+  margin-right: -10px;
+}

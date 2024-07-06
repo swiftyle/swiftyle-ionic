@@ -1,0 +1,111 @@
+<ion-content [fullscreen]="true">
+  <ion-toolbar>
+    <ion-title>All Categories</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="close" class="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <div class="segment-buttons">
+    <ion-button fill="clear" class="segment-button" (click)="selectCategory('all')" [ngClass]="{'selected': selectedCategory === 'all'}">All</ion-button>
+    <ion-button fill="clear" class="segment-button" (click)="selectCategory('female')" [ngClass]="{'selected': selectedCategory === 'female'}">Female</ion-button>
+    <ion-button fill="clear" class="segment-button" (click)="selectCategory('male')" [ngClass]="{'selected': selectedCategory === 'male'}">Male</ion-button>
+  </div>
+
+  <ion-list *ngIf="selectedCategory === 'all' || selectedCategory === 'female'">
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <img src="assets/images/preference/minimalist.png" alt="" />
+      </ion-thumbnail>
+      <ion-label>
+        Clothing
+      </ion-label>
+      <ion-button fill="clear" slot="end" (click)="toggleContent('clothing')">
+        <ion-icon name="chevron-down" [ngClass]="{'rotated': isContentVisible['clothing']}"></ion-icon>
+      </ion-button>
+    </ion-item>
+    <div *ngIf="isContentVisible['clothing']">
+      <!-- Additional content for Clothing category -->
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-button expand="block" fill="outline">Dresses</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button expand="block" fill="outline">Pants</ion-button>
+          </ion-col>
+        </ion-row>
+        <!-- Add more rows as needed -->
+      </ion-grid>
+    </div>
+
+    <!-- Add more items and toggleable content here -->
+
+  </ion-list>
+
+  <ion-list *ngIf="selectedCategory === 'all' || selectedCategory === 'male'">
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <img src="assets/images/preference/sporty.png" alt=""/>
+      </ion-thumbnail>
+      <ion-label>
+        Shoes
+      </ion-label>
+      <ion-button fill="clear" slot="end" (click)="toggleContent('shoes')">
+        <ion-icon name="chevron-down" [ngClass]="{'rotated': isContentVisible['shoes']}"></ion-icon>
+      </ion-button>
+    </ion-item>
+    <div *ngIf="isContentVisible['shoes']">
+      <!-- Additional content for Shoes category -->
+    </div>
+  </ion-list>
+
+  <!-- Other items that are not category-specific -->
+
+  <ion-list>
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <img src="assets/images/preference/glamour.png" alt="" />
+      </ion-thumbnail>
+      <ion-label>
+        Bags
+      </ion-label>
+      <ion-button fill="clear" slot="end" (click)="toggleContent('bags')">
+        <ion-icon name="chevron-down" [ngClass]="{'rotated': isContentVisible['bags']}"></ion-icon>
+      </ion-button>
+    </ion-item>
+    <div *ngIf="isContentVisible['bags']">
+      <!-- Additional content for Bags category -->
+    </div>
+
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <img src="assets/images/preference/vintage.png" alt=""/>
+      </ion-thumbnail>
+      <ion-label>
+        Accessories
+      </ion-label>
+      <ion-button fill="clear" slot="end" (click)="toggleContent('accessories')">
+        <ion-icon name="chevron-down" [ngClass]="{'rotated': isContentVisible['accessories']}"></ion-icon>
+      </ion-button>
+    </ion-item>
+    <div *ngIf="isContentVisible['accessories']">
+      <!-- Additional content for Accessories category -->
+    </div>
+
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <img src="assets/images/preference/classic.png" alt="" />
+      </ion-thumbnail>
+      <ion-label>
+        Just for You
+        <ion-icon name="star" class="star-icon"></ion-icon>
+      </ion-label>
+      <ion-button fill="clear" slot="end" class="arrow">
+        <ion-icon name="arrow-forward"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>

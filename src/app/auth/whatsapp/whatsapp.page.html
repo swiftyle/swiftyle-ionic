@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>WhatsApp</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" [fullscreen]="true">
+  <div class="container">
+    <div class="logo">
+      <img src="assets/logo.png" alt="Swift Style Logo">
+    </div>
+    <h2>WhatsApp</h2>
+
+    <ion-item>
+      <ion-label position="floating">Mobile Number</ion-label>
+      <ion-input type="tel" [(ngModel)]="countryCode" placeholder="+62"></ion-input>
+      <ion-input type="tel" [(ngModel)]="phoneNumber" placeholder="0000 0000 0000"></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" (click)="sendVerification()">Send</ion-button>
+  </div>
+
+  <div class="background">
+    <img src="assets/background.png" alt="Background Image">
+  </div>
+</ion-content>

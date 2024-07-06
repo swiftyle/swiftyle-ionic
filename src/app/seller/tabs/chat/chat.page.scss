@@ -1,0 +1,69 @@
+.top-bar {
+  background-color: #e75c69;
+  padding: 10px;
+  height: 100px;
+}
+
+.bar h1 {
+  font-size: 30px;
+  color: white;
+  margin: 0;
+}
+
+ion-badge {
+  color: black;
+  background: white;
+  border-radius: 20px;
+  font-size: 20px;
+  width: 30px;
+  height: 30px;
+}
+
+ion-searchbar {
+  --background: white;
+  --placeholder-color: #ccc;
+  --color: #e75c69;
+  --border-radius: 20px;
+  width: 108%;
+  margin-left: -12px;
+}
+
+.center-container {
+  margin-top: -100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.notification-badge {
+  background-color: #e75c69;
+  color: white;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+ion-item {
+  --padding-start: 0;
+  --inner-padding-end: 0;
+  --inner-padding-start: 0;
+  --padding-end: 0;
+}
+
+ion-label h2 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+ion-label p {
+  margin: 0;
+  font-size: 14px;
+  color: #757575;
+}

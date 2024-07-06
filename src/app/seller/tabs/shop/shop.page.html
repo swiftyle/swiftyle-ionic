@@ -1,0 +1,227 @@
+<ion-content [fullscreen]="true">
+  <div class="profile-header">
+    <div class="profile-text">
+      <ion-avatar>
+        <img [src]="userService.user.avatar" alt="" />
+      </ion-avatar>
+      <div class="profile-info">
+        <h2>Swiftyle.official</h2>
+        <p>Pengikut 99 | Mengikuti 99</p>
+      </div>
+
+      <div class="profile-icons">
+        <div class="icon-wrapper">
+          <ion-icon name="menu-outline"></ion-icon>
+        </div>
+        <div class="icon-wrapper" [routerLink]="'/voucher'">
+          <ion-icon name="pricetag-outline"></ion-icon>
+        </div>
+        <div class="icon-wrapper" [routerLink]="'/profile-setting'">
+          <ion-icon name="settings-outline"></ion-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ion-padding">
+    <div class="profile-buttons">
+      <ion-button expand="block" shape="round" (click)="selectSegment('store')">Store</ion-button>
+      <ion-button expand="block" shape="round" (click)="selectSegment('product')">Product</ion-button>
+      <ion-button expand="block" shape="round" (click)="selectSegment('categories')">Categories</ion-button>
+    </div>
+    <div [ngSwitch]="selectedSegment">
+      <div *ngSwitchCase="'store'">
+        <div class="store-section">
+        </div>
+        <div class="fixed-footer">
+          <ion-button expand="block">Set Up Store</ion-button>
+        </div>
+      </div>
+      <div *ngSwitchCase="'product'">
+        <div class="product-section">
+          <div class="product-list">
+            <div class="product-card">
+              <img src="https://via.placeholder.com/150" alt="Product Image">
+              <p>Lorem ipsum dolor sit amet consectetur</p>
+              <p class="price">Rp120.000</p>
+            </div>
+            <div class="product-card">
+              <img src="https://via.placeholder.com/150" alt="Product Image">
+              <p>Lorem ipsum dolor sit amet consectetur</p>
+              <p class="price">Rp120.000</p>
+            </div>
+            <div class="product-card">
+              <img src="https://via.placeholder.com/150" alt="Product Image">
+              <p>Lorem ipsum dolor sit amet consectetur</p>
+              <p class="price">Rp120.000</p>
+            </div>
+            <div class="product-card">
+              <img src="https://via.placeholder.com/150" alt="Product Image">
+              <p>Lorem ipsum dolor sit amet consectetur</p>
+              <p class="price">Rp120.000</p>
+            </div>
+            <div class="product-card">
+              <img src="https://via.placeholder.com/150" alt="Product Image">
+              <p>Lorem ipsum dolor sit amet consectetur</p>
+              <p class="price">Rp120.000</p>
+            </div>
+            <div class="product-card">
+              <img src="https://via.placeholder.com/150" alt="Product Image">
+              <p>Lorem ipsum dolor sit amet consectetur</p>
+              <p class="price">Rp120.000</p>
+            </div>
+            <!-- Tambahkan produk lainnya di sini -->
+          </div>
+        </div>
+        <div class="fixed-footer">
+          <ion-button expand="block" (click)="openProductModal()">Set Up Product</ion-button>
+        </div>
+      </div>
+      <div *ngSwitchCase="'categories'">
+        <div class="categories-section">
+          <div class="button-categories">
+            <ion-button expand="block" class="left-align-button">Clothes</ion-button>
+            <ion-button expand="block" class="left-align-button">Shoes</ion-button>
+            <ion-button expand="block" class="left-align-button">Accessories</ion-button>
+          </div>
+        </div>
+        <div class="fixed-footer">
+          <ion-button expand="block" (click)="openCategoriesModal()">Set Up Categories</ion-button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ion-modal #productModal>
+    <ng-template>
+      <ion-content class="ion-padding">
+        <h2 class="product-header">Add Product <ion-icon name="close-outline" (click)="closeProductModal()"></ion-icon>
+        </h2>
+        <div class="profile-container">
+          <div class="top-section">
+            <div class="photo-container">
+              <div class="photo-placeholder" (click)="fileInput.click()">
+                <span *ngIf="!photoUrl">+ Add Photo</span>
+                <img *ngIf="photoUrl" [src]="photoUrl" alt="Profile Photo" />
+              </div>
+              <input #fileInput type="file" accept="image/*" (change)="onFileSelected($event)" hidden />
+
+            </div>
+            <div class="name-container">
+              <ion-item class="name-input">
+                <ion-input placeholder="Name" [(ngModel)]="name"></ion-input>
+              </ion-item>
+            </div>
+          </div>
+          <ion-item class="description-input">
+            <ion-textarea placeholder="Description" [(ngModel)]="description"></ion-textarea>
+          </ion-item>
+
+          <div class="category-section">
+            <h3>Category</h3>
+            <div class="shop-orders">
+              <ion-chip [ngClass]="{'category-selected': selectedCategory === 'Clothes'}"
+                (click)="selectCategory('Clothes')">Clothes</ion-chip>
+              <ion-chip [ngClass]="{'category-selected': selectedCategory === 'Shoes'}"
+                (click)="selectCategory('Shoes')">Shoes</ion-chip>
+              <ion-chip [ngClass]="{'category-selected': selectedCategory === 'Accessories'}"
+                (click)="selectCategory('Accessories')">Accessories</ion-chip>
+            </div>
+          </div>
+
+          <div class="subcategory-section">
+            <h3>Sub Category</h3>
+            <div class="shop-orders">
+              <ion-chip [ngClass]="{'subcategory-selected': selectedSubCategory === 'Kids'}"
+                (click)="selectSubCategory('Kids')">Kids</ion-chip>
+              <ion-chip [ngClass]="{'subcategory-selected': selectedSubCategory === 'Women'}"
+                (click)="selectSubCategory('Women')">Women</ion-chip>
+              <ion-chip [ngClass]="{'subcategory-selected': selectedSubCategory === 'Men'}"
+                (click)="selectSubCategory('Men')">Men</ion-chip>
+            </div>
+          </div>
+
+          <div class="size-section">
+            <h3>Size</h3>
+            <div class="size-buttons-group">
+              <div *ngFor="let size of sizes" class="size-chip" [ngClass]="{'size-selected': selectedSize === size}"
+                (click)="selectSize(size)">
+                {{ size }}
+              </div>
+            </div>
+          </div>
+
+          <div class="color-section">
+            <h3>Color</h3>
+            <div class="color-buttons-group">
+              <div class="color-button" [class.selected]="selectedColor === '#FFFFFF'"
+                style="background-color: #FFFFFF;" (click)="selectColor('#FFFFFF')">
+                <ion-icon name="checkmark-circle" *ngIf="selectedColor === '#FFFFFF'"></ion-icon>
+              </div>
+              <div class="color-button" [class.selected]="selectedColor === '#000000'"
+                style="background-color: #000000;" (click)="selectColor('#000000')">
+                <ion-icon name="checkmark-circle" *ngIf="selectedColor === '#000000'"></ion-icon>
+              </div>
+              <div class="color-button" [class.selected]="selectedColor === '#FF0000'"
+                style="background-color: #FF0000;" (click)="selectColor('#FF0000')">
+                <ion-icon name="checkmark-circle" *ngIf="selectedColor === '#FF0000'"></ion-icon>
+              </div>
+              <div class="color-button" [class.selected]="selectedColor === '#FF5A5A'"
+                style="background-color: #FF5A5A;" (click)="selectColor('#FF5A5A')">
+                <ion-icon name="checkmark-circle" *ngIf="selectedColor === '#FF5A5A'"></ion-icon>
+              </div>
+              <div class="color-button" [class.selected]="selectedColor === '#00B2B2'"
+                style="background-color: #00B2B2;" (click)="selectColor('#00B2B2')">
+                <ion-icon name="checkmark-circle" *ngIf="selectedColor === '#00B2B2'"></ion-icon>
+              </div>
+              <div class="color-button" [class.selected]="selectedColor === '#FFD700'"
+                style="background-color: #FFD700;" (click)="selectColor('#FFD700')">
+                <ion-icon name="checkmark-circle" *ngIf="selectedColor === '#FFD700'"></ion-icon>
+              </div>
+              <div class="color-button" [class.selected]="selectedColor === '#A020F0'"
+                style="background-color: #A020F0;" (click)="selectColor('#A020F0')">
+                <ion-icon name="checkmark-circle" *ngIf="selectedColor === '#A020F0'"></ion-icon>
+              </div>
+            </div>
+            <div class="price-stock">
+              <div class="price-container">
+                <label>Price</label>
+                <ion-item class="price-input">
+                  <ion-input type="number" placeholder="Rp130.000" [(ngModel)]="price"></ion-input>
+                </ion-item>
+              </div>
+              <div class="stock-container">
+                <label>Stock</label>
+                <ion-item class="stock-input">
+                  <ion-input type="number" placeholder="50" [(ngModel)]="stock"></ion-input>
+                </ion-item>
+              </div>
+            </div>
+            <div class="action-buttons">
+              <ion-button expand="block" class="clear-button" (click)="clearSelections()">Clear</ion-button>
+              <ion-button class="apply-button" (click)="applySelections()">Apply</ion-button>
+            </div>
+
+          </div>
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+  <ion-modal #categoriesModal>
+    <ng-template>
+      <ion-content class="ion-padding">
+        <h2 class="categories-header">Add Categories <ion-icon name="close-outline"
+            (click)="closeCategoriesModal()"></ion-icon></h2>
+        <div class="categories-text">
+          <p>Categories</p>
+          <div class="text-area">
+            <ion-textarea placeholder="  Enter Categories"></ion-textarea>
+          </div>
+          <div class="fixed-footer">
+            <ion-button expand="block">Save Changes</ion-button>
+          </div>
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+</ion-content>

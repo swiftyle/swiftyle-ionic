@@ -1,0 +1,22 @@
+<ion-content>
+  <div class="header">
+    <h1>Settings</h1>
+  </div>
+  <div class="subheader">
+    <h2>Country</h2>
+  </div>
+  <ion-list>
+    <ion-item button (click)="selectCountry('US')" [class.selected]="selectedCountry === 'US'">
+      <ion-label>US</ion-label>
+      <ion-radio slot="end" [checked]="selectedCountry === 'US'"></ion-radio>
+    </ion-item>
+    <ion-item button (click)="selectCountry('EU')" [class.selected]="selectedCountry === 'EU'">
+      <ion-label>EU</ion-label>
+      <ion-radio slot="end" [checked]="selectedCountry === 'EU'"></ion-radio>
+    </ion-item>
+    <ion-item button (click)="selectCountry('UK')" [class.selected]="selectedCountry === 'UK'">
+      <ion-label>UK</ion-label>
+      <ion-radio slot="end" [checked]="selectedCountry === 'UK'"></ion-radio>
+    </ion-item>
+  </ion-list>
+</ion-content>

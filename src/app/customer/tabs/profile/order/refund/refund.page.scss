@@ -1,0 +1,650 @@
+ion-content {
+    font-family: var(--ion-font-family);
+}
+
+.checkout-header {
+    background-color: #E75C69;
+    padding: 10px;
+    color: white;
+    height: 120px;
+}
+
+.section {
+    margin: 16px;
+    padding: 16px;
+    background: #F9F9F9;
+    border-radius: 10px;
+    margin-top: -50px;
+    margin-bottom: 60px;
+}
+
+.section-title {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.variation-buttons {
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.variation-buttons ion-button {
+    margin-left: 10px;
+    width: 60px;
+    --border-radius: 20px;
+}
+
+.btn-c {
+    --background: #FCE5E5;
+    color: #E75C69;
+}
+
+.btn-b {
+    color: black;
+    border-width: 3px;
+    --border-color: #000000;
+}
+
+.section-title h2 {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.section-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.section-content p {
+    margin: 0;
+    font-size: 12px;
+    margin-bottom: 18px;
+    font-weight: 500;
+}
+
+.section-content.compact .contact-info p {
+    margin: 0;
+    font-size: 12px;
+    margin-bottom: 2px;
+}
+
+.edit-button {
+    background: #E75C69;
+    border-radius: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.edit-button ion-icon {
+    color: white;
+}
+
+.items {
+    position: relative;
+    background: none;
+    /* Remove background */
+}
+
+.section-title .text {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.item-count {
+    background-color: #ff6f61;
+    color: white;
+    border-radius: 50%;
+    padding: 4px 8px;
+    font-size: 14px;
+}
+
+.discount-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background-color: #a1a1a1;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 16px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    cursor: pointer;
+}
+
+.discount-badge.applied {
+    background-color: #E75C69;
+    color: black;
+}
+
+.close-icon {
+    margin-left: 8px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.thumbnail-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.thumbnail-wrapper ion-thumbnail {
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid white;
+    box-shadow: 0 5px 10px rgba(82, 82, 82, 0.161);
+}
+
+.thumbnail-wrapper img {
+    border-radius: 50%;
+}
+
+.badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #FCE5E5;
+    border-radius: 50%;
+    padding: 4px 6px;
+    /* Smaller padding */
+    font-size: 14px;
+    /* Smaller font size */
+    font-weight: bold;
+    color: black;
+}
+
+.item-list h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 12px;
+}
+
+.price {
+    margin-left: 10px;
+    font-size: 14px;
+    color: #000;
+}
+
+.delivery-date {
+    font-size: 14px;
+    color: #757575;
+}
+
+.total-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.total-price {
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.confirm-order {
+    padding: 16px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.confirm-order ion-button {
+    --background: #E75C69;
+    width: 150px;
+    height: 40px;
+    --border-radius: 10px;
+}
+
+.button-pink {
+    --background: #E75C69;
+}
+
+ion-button {
+    width: auto; /* Ensure the button size adjusts as needed */
+    text-align: center;
+}
+
+.shipping-option {
+    display: flex;
+    align-items: center;
+    --border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    cursor: pointer;
+    --ion-item-background: none;
+}
+
+.shipping-option.selected {
+    background-color: #FCE5E5;
+    border-radius: 15px;
+    height: 50px;
+}
+
+.checkmark {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #E75C69;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.shipping-option.selected .checkmark {
+    background-color: #E75C69;
+    color: white;
+}
+
+.shipping-option.selected .checkmark::after {
+    content: '✓';
+    font-size: 14px;
+}
+
+.shipping-label {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.shipping-label h3 {
+    font-size: 18px;
+}
+
+.shipping-label p {
+    font-size: 14px;
+    color: #E75C69;
+}
+
+.shipping-label .price {
+    font-weight: bold;
+    color: #000;
+}
+
+.total-title h2 {
+    margin-right: 10px;
+}
+
+.total-title {
+    display: flex;
+    align-items: center;
+}
+
+.total-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.top-background {
+    background-color: #E75C69;
+    height: 12vh;
+    width: 100%;
+    z-index: -1;
+}
+
+/* Profile picture styling */
+.profile-picture {
+    margin-left: 12px;
+    margin-top: 10px;
+}
+
+.profile-picture img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 4px solid white;
+}
+
+ion-toolbar {
+    --background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    margin-top: 12px;
+}
+
+ion-title {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: white;
+}
+
+.custom-buttons {
+    margin-top: 12px;
+    display: flex;
+    gap: 10px;
+}
+
+.custom-buttons ion-button {
+    background: white;
+    border: none;
+    border-radius: 50%;
+    width: 10px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.custom-buttons ion-button ion-icon {
+    color: #E75C69;
+    font-size: 24px;
+}
+
+.custom-buttons ion-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(231, 84, 84, 0.1);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.segment-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 16px;
+    margin-top: 20px;
+}
+
+.custom-buttons {
+    margin-top: 12px;
+    display: flex;
+    gap: 10px;
+}
+
+.custom-buttons ion-button {
+    background: white;
+    border: none;
+    border-radius: 50%;
+    width: 10px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.custom-buttons ion-button ion-icon {
+    color: #E75C69;
+    font-size: 24px;
+}
+
+.custom-buttons ion-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(231, 84, 84, 0.1);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.segment-buttons .narrow-button {
+    flex: 1;
+    margin: 0 4px;
+    max-width: 150px;
+    font-size: 12px;
+    --border-radius: 20px;
+    /* Adjust this value to make the buttons narrower or wider */
+}
+
+.segment-buttons .narrow-button:first-child {
+    margin-left: 0;
+}
+
+.segment-buttons .narrow-button:last-child {
+    margin-right: 0;
+}
+
+.header-section h2 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.vouchers-section {
+    padding: 16px;
+}
+
+.voucher-card {
+    border: 2px solid #F2B8B8;
+    border-radius: 10px;
+    margin-bottom: 16px;
+    position: relative;
+    padding: 10px;
+    overflow: hidden;
+    background: white;
+    height: 140px;
+    /* Adjust the height as needed */
+}
+
+.voucher-card:before,
+.voucher-card:after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border: 2px solid #F2B8B8;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.voucher-card:before {
+    left: -12px;
+}
+
+.voucher-card:after {
+    right: -12px;
+}
+
+.voucher-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px dashed #E75C69;
+    padding-bottom: 8px;
+}
+
+.voucher-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #E75C69;
+}
+
+.voucher-details {
+    display: flex;
+    align-items: center;
+}
+
+.badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 0.9em;
+    margin-left: 5px;
+}
+
+.badge.light {
+    background-color: white;
+    color: #F2B8B8;
+}
+
+.badge.secondary {
+    background-color: #F2B8B8;
+    color: black;
+}
+
+.voucher-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.voucher-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.voucher-info h3 {
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+    margin: 0;
+}
+
+.voucher-info h3 ion-icon {
+    margin-right: 8px;
+    color: #E75C69;
+}
+
+.voucher-info p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+.collected-button {
+    --background: #E75C69;
+    color: white;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 0.8em;
+}
+
+.text {
+    font-weight: 600;
+    text-align: left;
+    margin-left: 15px;
+}
+
+.discount-badge {
+    background-color: #a09f9f;
+    border-radius: 8px;
+    padding: 8px 16px;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+
+    &.voucher-applied {
+        background-color: #E75C69;
+        color: white;
+
+        ion-icon {
+            margin-left: 8px;
+            cursor: pointer;
+        }
+    }
+}
+
+.title {
+    color: black;
+}
+
+ion-item.no-bottom-border {
+    --inner-border-width: 0px;
+}
+
+.shipping-section {
+    padding: 16px;
+    margin-top: -50px;
+}
+
+.shipping-section-title {
+    margin-bottom: 16px;
+}
+
+.shipping-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.shipping-option-texts {
+    display: flex;
+    flex-direction: column;
+}
+
+.shipping-options-text {
+    font-weight: bold;
+    margin: 0;
+}
+
+.shipping-options-subtext {
+    color: grey;
+    margin: 0;
+}
+
+.shipping-options-button {
+    background-color: #f8d7da;
+    color: #dc3545;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.payment-section {
+    padding: 16px;
+    margin-top: -40px;
+    margin-bottom: 20px;
+}
+
+.payment-section-title {
+    margin-bottom: 16px;
+}
+
+.payment-options {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.payment-option {
+    display: flex;
+    flex-direction: column;
+}
+
+.payment-options-text {
+    font-weight: bold;
+    margin: 0;
+}
+
+.payment-options-subtext {
+    color: grey;
+    margin: 0;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}

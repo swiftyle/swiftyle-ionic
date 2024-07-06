@@ -1,0 +1,88 @@
+.header {
+    background-color: #F85069;
+    color: white;
+    padding: 1rem 0;
+    height: 120px;
+  }
+  
+  .header h1 {
+    margin-left: 12px;
+  }
+  
+  .segment-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+  }
+  
+  .segment-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .icon {
+    --background: white;
+  }
+  
+  .ion {
+    margin-top: 40px;
+  }
+  
+  .segment-button {
+    box-shadow: 0 5px 10px rgba(82, 82, 82, 0.161);
+    width: 150px;
+    height: 40px;
+    background: white;
+    color: black;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 15px;
+  }
+  
+  .segment-button.active {
+    background: #FCE5E5;
+    color: #E75C69;
+  }
+  
+  .chevron-icon {
+    margin-left: 1rem;
+    color: white;
+  }
+  
+  ion-card {
+    margin-top: 30px;
+    --border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+  }
+  
+  .item-img {
+    max-height: 180px;
+    width: 100%;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+  
+  ion-card-content {
+    text-align: left;
+    padding: 0.5rem 1rem;
+  }
+  
+  .item-title {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .item-price {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 0.5rem;
+  }

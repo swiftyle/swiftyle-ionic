@@ -1,0 +1,20 @@
+.share-modal-content {
+    --background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+.share-icon {
+    font-size: 40px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid #ccc;
+}

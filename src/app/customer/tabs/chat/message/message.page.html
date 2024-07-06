@@ -1,0 +1,36 @@
+<ion-content>
+  <div class="chat-container">
+    <div class="header">
+      <ion-avatar>
+        <img [src]="headerAvatar" alt="{{headerName}}">
+      </ion-avatar>
+      <div class="header-info">
+        <div class="header-name">{{headerName}}</div>
+        <div class="header-role">{{headerRole}}</div>
+      </div>
+    </div>
+
+    <div *ngFor="let message of messages">
+      <div [ngClass]="getMessageClass(message)">
+        <div *ngIf="message.orderInfo" class="order-info">
+          <img [src]="message.orderInfo.image" alt="{{message.orderInfo.id}}" class="order-image">
+          <div class="item">
+            <div class="order-id">{{message.orderInfo.id}}</div>
+            <div class="order-items">{{message.orderInfo.items}}</div>
+            <div class="order-delivery">{{message.orderInfo.delivery}}</div>
+            <div class="order-status">{{message.orderInfo.status}}</div>
+          </div>
+        </div>
+        <div *ngIf="message.text" class="message-text">{{message.text}}</div>
+        <div *ngIf="message.time" class="message-time">{{message.time}}</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="message-input-container">
+    <ion-item>
+      <ion-input type="text" placeholder="Type a message..." [(ngModel)]="newMessage"></ion-input>
+      <ion-button slot="end" (click)="sendMessage()">Send</ion-button>
+    </ion-item>
+  </div>
+</ion-content>

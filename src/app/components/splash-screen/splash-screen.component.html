@@ -1,0 +1,10 @@
+<!-- Hapus <ion-content> dan langsung letakkan konten dalam komponen -->
+  <div class="modal-content">
+    <ion-icon name="warning-outline" class="warning-icon"></ion-icon>
+    <p *ngIf="attempts < maxAttempts">Incorrect password. Please, try again.</p>
+    <p *ngIf="attempts >= maxAttempts">
+      You reached the maximum amount of attempts. Please, try again in {{ countdown }} seconds.
+    </p>
+    <ion-button expand="block" (click)="closeModal()" [disabled]="attempts >= maxAttempts && countdown > 0">Okay</ion-button>
+  </div>
+  

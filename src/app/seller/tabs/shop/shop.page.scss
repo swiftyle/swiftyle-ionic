@@ -1,0 +1,556 @@
+.profile-header {
+    color: #E75C69;
+    height: 150px;
+    background: #E75C69;
+}
+
+.profile-text {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.avatar-img img {
+    border: 2px solid #ffffff;
+    border-radius: 15px;
+}
+
+.ion-padding {
+    margin-top: -50px;
+}
+
+.square-avatar {
+    width: 100px;
+    height: 100px;
+    margin-left: -12px;
+    border-radius: 0;
+    /* Make the avatar square */
+}
+
+.profile-info {
+    flex-grow: 1;
+    padding-left: 15px;
+}
+
+.profile-info h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #ffffff;
+}
+
+.profile-info p {
+    margin: 0;
+    color: #ffffff;
+    font-size: 12px;
+}
+
+.profile-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.icon-profile {
+    margin-right: 20px;
+}
+
+.icon-wrapper {
+    background-color: #F8F8F8;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-icons ion-icon {
+    font-size: 20px;
+    color: #E75C69;
+}
+
+.profile-header ion-avatar {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #ffffff;
+    /* Updated border color to match icon color */
+    border-radius: 50%;
+}
+
+.profile-info {
+    flex-grow: 1;
+    padding-left: 15px;
+}
+
+.profile-info h2 {
+    margin: 0;
+    font-size: 15px;
+    color: #ffffff;
+    /* Updated text color */
+}
+
+.profile-info p {
+    margin: 0;
+    color: #ffffff;
+    /* Updated text color */
+    font-size: 12px;
+}
+
+/* Styles for the new icons */
+.profile-icons {
+    margin-right: -15px;
+    display: flex;
+    gap: 10px;
+}
+
+.icon-wrapper {
+    background-color: #F8F8F8;
+    /* Set background color for icons */
+    width: 30px;
+    /* Set width for icons */
+    height: 30px;
+    /* Set height for icons */
+    border-radius: 15px;
+    /* Rounded corners */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-icons ion-icon {
+    font-size: 20px;
+    color: #E75C69;
+    /* Set icon color */
+}
+
+.profile-buttons {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 20px;
+    margin-left: -16px;
+    margin-top: -30px;
+}
+
+.profile-buttons ion-button {
+    width: 120px;
+    --background: #ffffff;
+    color: #E75C69;
+}
+
+.btn ion-button {
+    --background: #E75C69;
+    --border-radius: 10px;
+    width: 100%;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0 10px;
+    margin-bottom: 50px;
+}
+
+.product-card {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 45%;
+}
+
+.product-card img {
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+}
+
+.product-card p {
+    margin: 10px 0 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.product-card .price {
+    font-weight: bold;
+}
+
+.product-section {
+    margin-top: 30px;
+}
+
+.categories-section {
+    margin-top: 30px;
+}
+
+.store-section {
+    margin-top: 30px;
+}
+
+.button-categories ion-button {
+    --background: #FEF1F1;
+    color: black;
+    --border-radius: 10px;
+    margin-top: 13px;
+}
+
+.fixed-footer {
+    position: fixed;
+    bottom: 0;
+    width: 85%;
+    height: 10vh;
+    margin-left: 12px;
+    justify-content: center;
+    background: #ffffff;
+    z-index: 2;
+}
+
+.fixed-footer ion-button {
+    --background: #E75C69;
+    --border-radius: 10px;
+}
+
+.product-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+}
+
+.product-header h2 {
+    margin-right: auto;
+    /* Menggeser teks "Add Product" ke kiri */
+}
+
+.product-header ion-icon {
+    margin-left: 10px;
+    /* Jarak antara ikon dengan teks */
+}
+
+.categories-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+}
+
+.categories-header h2 {
+    margin-right: auto;
+    /* Menggeser teks "Add Product" ke kiri */
+}
+
+.categories-header ion-icon {
+    margin-left: 10px;
+    /* Jarak antara ikon dengan teks */
+}
+
+.text-area {
+    background: #FEF1F1;
+    color: #E75C69;
+    border-radius: 10px;
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.top-section {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.photo-container {
+    margin-right: 20px;
+}
+
+.photo-placeholder {
+    width: 70px;
+    height: 70px;
+    border: 2px dashed #f76c6c;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f76c6c;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    background-color: #ffffff;
+    overflow: hidden;
+    /* Ensure content stays inside the border */
+}
+
+.photo-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensures the image covers the placeholder without distorting */
+    border-radius: 50%;
+    /* Ensures the image is rounded to fit within the placeholder */
+}
+
+
+.photo-placeholder img.photo-preview {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    position: absolute;
+}
+
+.photo-placeholder:hover {
+    background-color: #f76c6c;
+    color: white;
+    border-color: #f76c6c;
+}
+
+.name-container {
+    flex: 1;
+}
+
+.name-input,
+.description-input {
+    --background: #fff4f4;
+    --placeholder-color: #f76c6c;
+    --color: #f76c6c;
+    width: 100%;
+}
+
+.category-section,
+.subcategory-section,
+.color-section {
+    width: 100%;
+    text-align: left;
+}
+
+h3 {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.category-button,
+.subcategory-button {
+    --border-radius: 20px;
+    --background: #fff4f4;
+    --border-color: #f76c6c;
+    --color: #f76c6c;
+    width: 30%;
+}
+
+.category-button:hover,
+.subcategory-button:hover {
+    --color: white;
+    --border-color: #f76c6c;
+}
+
+.shop-orders {
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.shop-orders ion-chip {
+    margin: 5px;
+    background-color: #FCE5E5;
+    color: black;
+}
+
+.shop-orders ion-chip:hover {
+    color: #E75C69;
+    border: 2px solid #E75C69;
+}
+
+.top-section,
+.category-section,
+.subcategory-section,
+.color-section {
+    margin-bottom: 16px;
+}
+
+.color-section h3 {
+    font-size: 1.2em;
+    margin-bottom: 8px;
+}
+
+.color-buttons-group {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.color-button {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    box-shadow: 0 8px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.color-button:hover {
+    border-color: #f76c6c;
+}
+
+.color-button.selected {
+    border-color: #ff5a5a;
+}
+
+.color-button.selected ion-icon {
+    color: #ff5a5a;
+    font-size: 18px;
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+
+/* Selected States for Categories */
+.shop-orders ion-chip.category-selected {
+    border: 2px solid #E75C69;
+    --background: #FFEBEB;
+    color: #E75C69;
+}
+
+/* Selected States for Subcategories */
+.shop-orders ion-chip.subcategory-selected {
+    --background: #FFEBEB;
+    border: 2px solid #E75C69;
+    color: #E75C69;
+}
+
+.size-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 16px 0;
+    margin-top: -10px;
+
+    h3 {
+        margin-bottom: 8px;
+        font-weight: bold;
+        font-size: 1.2rem;
+        align-self: flex-start;
+        margin-left: 27px;
+    }
+
+    .size-buttons-group {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        padding: 0 20px;
+        height: 30px;
+        width: 350px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 30px;
+            background-color: #FCE5E5;
+            border-radius: 15px;
+            z-index: -1; // Ensure background is behind the chips
+        }
+
+        .size-chip {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            margin: 0 8px;
+            border-radius: 50%;
+            background-color: transparent;
+            color: #FFAAAA;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            &.size-selected {
+                background-color: white;
+                color: #E75C69;
+                border: 2px solid #FCE5E5;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                transform: scale(1.2);
+            }
+        }
+    }
+}
+
+.price-stock {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.price-container,
+.stock-container {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.price-container label,
+.stock-container label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.stock-input {
+    width: 70px;
+    border-radius: 10px;
+    --background: #FEF4F4;
+}
+
+.price-input {
+    --background: #FEF4F4;
+    border-radius: 10px;
+    width: 100px;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.clear-button,
+.apply-button {
+  --background: transparent;
+  --background-activated: transparent;
+  --background-focused: transparent;
+  --background-hover: transparent;
+  --box-shadow: none; /* Remove box-shadow */
+}
+
+.clear-button {
+  border: 1px solid #f07171;
+  color: #f07171;
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+
+.apply-button {
+  background-color: #f07171;
+  color: #fff;
+  border-radius: 20px;
+  padding: 10px 40px;
+}

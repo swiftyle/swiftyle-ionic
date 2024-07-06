@@ -1,0 +1,371 @@
+ion-content {
+  --ion-background-color: #ffffff;
+}
+
+.product-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  background-color: #f8f8f8;
+}
+
+.product-image-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+.btn {
+  --background: #var(--ion-color-secondary);
+  --border-radius: 10px;
+  font-size: 12px;
+  height: 50px;
+}
+
+ion-modal {
+  --height: 50%;
+  /* Set modal height to 50% */
+  --border-radius: 20px 20px 0 0;
+  /* Rounded corners for the top edges */
+  margin-bottom: -40vh;
+  transform: none !important;
+  /* Remove any transform effects */
+  overflow: hidden;
+  /* Hide any overflowing content */
+}
+
+.btn-a {
+  --background: var(--ion-color-tertiary);
+  --color: var(--ion-color-primary);
+}
+
+.product-info {
+  margin-top: -30px;
+  border-radius: 15px 15px 0 0;
+}
+
+.product-price {
+  font-size: 24px;
+  margin-bottom: 8px;
+  font-weight: bold;
+  margin-left: -12px;
+}
+
+.img {
+  width: 15vh;
+}
+
+.product-container {
+  display: flex;
+  align-items: center;
+}
+
+.product-container .img {
+  width: 100px;
+  /* Sesuaikan lebar gambar sesuai kebutuhan */
+  height: auto;
+  /* Biarkan tinggi gambar menyesuaikan proporsinya */
+  margin-right: 20px;
+  /* Beri margin kanan agar terpisah dari teks */
+}
+
+.product-container .details {
+  flex: 1;
+  /* Agar detail produk mengambil sisa ruang yang tersedia */
+}
+
+.product-container .price {
+  font-size: 18px;
+  /* Sesuaikan ukuran font harga */
+  margin: 0;
+  /* Hapus margin default jika diperlukan */
+  font-weight: bold;
+}
+
+.text {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.product-description {
+  font-size: 14px;
+  margin-bottom: 16px;
+  margin-left: -12px;
+}
+
+.btn-m {
+  --background: var(--ion-color-tertiary);
+  color: black;
+}
+
+.quantity-container {
+  display: flex;
+  align-items: center;
+  margin-top: 1em;
+}
+
+.quantity-input {
+  margin-left: 50px;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.number {
+  background: #FABBBA;
+  margin-left: 15px;
+  border-radius: 10px;
+  width: 60px;
+  height: 40px;
+}
+
+.quantity-btn {
+  margin-left: 20px;
+  border: none;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  font-size: 1em;
+  color: var(--ion-color-primary);
+  outline-style: solid;
+  border-radius: 50px;
+  height: 40px;
+  width: 40px;
+}
+
+.quantity-btn:disabled {
+  cursor: not-allowed;
+  color: #cccccc;
+}
+
+.quantity-input input {
+  width: 50px;
+  text-align: center;
+  border: none;
+  font-size: 1em;
+  padding: 0.5em;
+  outline: none;
+}
+
+.quantity-input input::-webkit-outer-spin-button,
+.quantity-input input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+.product-description p {
+  font-weight: 700;
+}
+
+.product-variations {
+  margin-bottom: 16px;
+  font-size: 20px;
+  margin-left: -12px;
+}
+
+.variations-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bg {
+  background: var(--ion-color-primary);
+  color: white;
+  border-radius: 10px;
+}
+
+.variations-header label {
+  font-weight: bold;
+}
+
+.variation-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.variation-options ion-chip {
+  margin-right: 8px;
+}
+
+.variation-options ion-button {
+  --background: var(--ion-color-primary);
+  color: white;
+  --border-radius: 25px;
+}
+
+.variation-images {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.variation-images ion-img {
+  width: 80px;
+  margin-left: 10px;
+  height: 70px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+ion-grid {
+  margin-top: 16px;
+}
+
+.same-height {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  /* Set this to the desired button height */
+}
+
+.same-height ion-button {
+  background: #F9F9F9;
+}
+
+.wishlist-button .button-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Customize buy now button */
+.buy-now-button {
+  --ion-color-base: #ffffff;
+  /* Change button background color */
+  --ion-color-danger-contrast: #ffffff;
+  /* Change button text color for danger variant */
+}
+
+/* Customize add to cart button */
+.add-to-cart-button ion-button {
+  --background: #var(--ion-color-secondary);
+  /* Change button background color */
+  --ion-color-contrast: #ffffff;
+  /* Change button text color */
+  --border-radius: 8px;
+}
+
+/* Additional styles for new buttons */
+.brown-m-button {
+  --background: #F9F9F9;
+  /* Brown color */
+  --border-radius: 10px;
+  color: black;
+}
+
+.see-all-button {
+  --background: var(--ion-color-primary);
+  /* Same as existing See All button */
+  color: white;
+  --border-radius: 10px;
+}
+
+.icon {
+  color: black;
+  margin-top: 12px;
+}
+
+.specifications,
+.delivery,
+.reviews,
+.suggestions {
+  margin-bottom: 20px;
+}
+
+.specifications p,
+.delivery p,
+.reviews p {
+  font-weight: bold;
+}
+
+.material,
+.origin,
+.size-guide {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.material ion-chip,
+.size-guide ion-button {
+  --background: #FFEBEB;
+}
+
+.size-guide ion-button {
+  --color: var(--ion-color-primary);
+}
+
+.delivery ion-card {
+  border: 1px solid var(--ion-color-primary);
+  border-radius: 10px;
+}
+
+.delivery-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.delivery-option span {
+  color: var(--ion-color-primary);
+}
+
+.review-summary {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.review {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.review ion-avatar {
+  width: 40px;
+  height: 40px;
+}
+
+.review strong {
+  display: block;
+}
+
+.suggestions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.suggestion-card {
+  border-radius: 8px;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+.ion-card {
+  width: 100%;
+}
+
+.suggestion-image {
+  border: #ffffff solid;
+  border-radius: 10px;
+  width: 100%;
+  height: auto;
+}
+
+.suggestion-name {
+  font-size: 14px;
+  color: #666;
+  margin: 8px 0 4px 0;
+}
+
+.suggestion-price {
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+}
+

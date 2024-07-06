@@ -1,0 +1,22 @@
+/* address.page.scss */
+
+.shipping-address-modal {
+  ion-content {
+    padding: 20px;
+  }
+
+  ion-button {
+    margin-top: 20px;
+  }
+}
+
+.show-modal {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.shipping-address-modal {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}

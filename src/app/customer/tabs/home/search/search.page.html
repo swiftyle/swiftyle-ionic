@@ -1,0 +1,54 @@
+<ion-content>
+  <!-- Top Bar -->
+  <div class="top-bar" lines="none">
+    <ion-grid>
+      <ion-row class="bar">
+        <ion-col size="3">
+          <h1 class="title">Search</h1>
+        </ion-col>
+        <ion-col size="9">
+          <ion-searchbar animated="false" showCancelButton="never"></ion-searchbar>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <!-- Search History -->
+  <div class="search-history">
+    <div class="search-history-title">
+      Search history
+      <ion-button fill="clear" color="danger" (click)="clearSearchHistory()">
+        <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+      </ion-button>
+    </div>
+    <ion-chip *ngFor="let history of searchHistory">
+      <ion-label>{{ history }}</ion-label>
+    </ion-chip>
+  </div>
+
+  <!-- Recommendations -->
+  <div class="recommendations">
+    <div class="recommendations-title">Recommendations</div>
+    <ion-chip *ngFor="let recommendation of recommendations">
+      <ion-label>{{ recommendation }}</ion-label>
+    </ion-chip>
+  </div>
+
+  <!-- Discover Section -->
+  <div class="discover">
+    <div class="discover-title">Discover</div>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="4" *ngFor="let product of products">
+          <ion-card>
+            <img [src]="product.img" alt=""/>
+            <ion-card-content>
+              <p>{{ product.description }}</p>
+              <p>{{ product.price }}</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

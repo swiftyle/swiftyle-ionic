@@ -1,0 +1,56 @@
+<ion-content [fullscreen]="true">
+  <div class="profile-header">
+    <div class="profile-text">
+      <ion-avatar>
+        <img [src]="userService.user.avatar" />
+      </ion-avatar>
+      <div class="profile-info">
+        <h2>To Receive</h2>
+        <p>Track Your Order</p>
+      </div>
+      <div class="icon-profile">
+        <div class="profile-icons">
+          <div class="icon-wrapper">
+            <ion-icon name="menu-outline"></ion-icon>
+          </div>
+          <div class="icon-wrapper" [routerLink]="'/voucher'">
+            <ion-icon name="pricetag-outline"></ion-icon>
+          </div>
+          <div class="icon-wrapper" [routerLink]="'/profile-setting'">
+            <ion-icon name="settings-outline"></ion-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="progress-bar">
+    <div class="progress-background">
+      <div class="progress">
+        <div class="dot start" [ngStyle]="{ left: '0%' }"></div>
+        <div class="dot middle" [ngStyle]="{ left: '50%' }"></div>
+        <div class="dot end" [ngStyle]="{ left: '100%' }"></div>
+      </div>
+    </div>
+  </div>
+  <div class="tracking-container">
+    <div class="tracking-info">
+      <h3>Tracking Number</h3>
+      <p>{{ trackingNumber }}</p>
+    </div>
+    <ion-icon name="menu-outline" class="copy-icon" (click)="copyToClipboard()"></ion-icon>
+  </div>
+  <div class="timeline">
+    <div class="timeline-event" *ngFor="let event of timelineEvents">
+      <div class="timeline-content">
+        <div class="timeline-header">
+          <h4>
+            {{ event.status }}
+            <ion-icon *ngIf="event.delivered" name="checkmark-circle" class="delivered-icon"></ion-icon>
+          </h4>
+          <span class="timeline-date">{{ event.date | date: 'MMM d, HH:mm' }}</span>
+        </div>
+        <p>{{ event.description }}</p>
+      </div>
+    </div>
+  </div>
+</ion-content>

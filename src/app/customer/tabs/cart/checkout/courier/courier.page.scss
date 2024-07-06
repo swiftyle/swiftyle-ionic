@@ -1,0 +1,52 @@
+page-shipping-option {
+    ion-header, ion-toolbar {
+      --background: #FFAEB3; /* Warna latar belakang toolbar */
+      --color: #fff;
+    }
+  
+    ion-content {
+      --background: #FFE6E6; /* Warna latar belakang konten */
+    }
+  
+    ion-list {
+      ion-item {
+        --background: #fff;
+        margin: 10px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+  
+        ion-thumbnail {
+          img {
+            border-radius: 8px;
+            width: 40px;
+            height: 40px;
+          }
+        }
+  
+        ion-label {
+          font-size: 16px;
+          color: #333;
+        }
+  
+        ion-radio {
+          margin-right: 10px;
+          --color: #FF5252; /* Warna radio button */
+          --color-checked: #FF5252;
+        }
+      }
+    }
+  
+    ion-footer {
+      ion-toolbar {
+        background: #FFAEB3; /* Warna latar belakang footer */
+  
+        ion-button {
+          --background: #FF5252; /* Warna tombol Apply */
+          --border-radius: 20px;
+        }
+      }
+    }
+  }
+  

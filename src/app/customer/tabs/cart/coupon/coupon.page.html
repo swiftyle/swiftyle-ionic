@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Coupon</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-card *ngFor="let coupon of coupons">
+    <ion-card-header>
+      <ion-card-subtitle>{{ coupon.store }}</ion-card-subtitle>
+      <ion-card-title>{{ coupon.discount }}</ion-card-title>
+      <p>{{ coupon.validity }}</p>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-button expand="full" fill="outline" (click)="copyCode(coupon.code)">
+        Copy Code
+      </ion-button>
+      <ion-button expand="full" color="danger" (click)="redeemNow(coupon)">
+        Redeem Now
+      </ion-button>
+      <div *ngIf="coupon.progress">
+        <ion-progress-bar [value]="coupon.progress.current / coupon.progress.total"></ion-progress-bar>
+        <p>{{ coupon.progress.current }}/{{ coupon.progress.total }}</p>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

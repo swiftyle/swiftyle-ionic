@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Payment Method</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <div class="payment-section">
+    <ion-button expand="block" color="light" class="custom-button">
+      Pilih Metode Pembayaran
+    </ion-button>
+  </div>
+
+  <ion-list>
+    <ion-item class="payment-item">
+      <ion-icon name="cash" slot="start" color="danger"></ion-icon>
+      <ion-label>COD</ion-label>
+    </ion-item>
+
+    <ion-item class="payment-item" button (click)="toggleDropdown('bank')">
+      <ion-icon name="card" slot="start" color="danger"></ion-icon>
+      <ion-label>Transfer Bank</ion-label>
+      <ion-icon [name]="bankDropdownOpen ? 'chevron-up' : 'chevron-down'" slot="end"></ion-icon>
+    </ion-item>
+    <ion-list *ngIf="bankDropdownOpen" class="dropdown-list">
+      <ion-item> BCA </ion-item>
+      <ion-item> BNI </ion-item>
+      <ion-item> BRI </ion-item>
+      <ion-item> Mandiri </ion-item>
+    </ion-list>
+
+    <ion-item class="payment-item" button (click)="toggleDropdown('wallet')">
+      <ion-icon name="wallet" slot="start" color="danger"></ion-icon>
+      <label>E-Wallet</label>
+      <ion-icon [name]="walletDropdownOpen ? 'chevron-up' : 'chevron-down'" slot="end"></ion-icon>
+    </ion-item>
+    <ion-list *ngIf="walletDropdownOpen" class="dropdown-list">
+      <ion-item> OVO </ion-item>
+      <ion-item> GoPay </ion-item>
+      <ion-item> Dana </ion-item>
+      <ion-item> LinkAja </ion-item>
+    </ion-list>
+  </ion-list>
+
+  <ion-footer>
+    <ion-button expand="block" color="secondary" class="apply-button">
+      Apply
+    </ion-button>
+  </ion-footer>
+</ion-content>

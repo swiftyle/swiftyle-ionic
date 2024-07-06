@@ -1,0 +1,280 @@
+<ion-content #pageContent>
+  <div class="checkout-header">
+    <h1>Checkout</h1>
+  </div>
+
+  <!-- Shipping Address Section -->
+  <div class="section">
+    <div class="section-title">
+      <h2>Shipping Address</h2>
+    </div>
+    <div class="section-content compact">
+      <p>
+        {{ address.firstname }} {{ address.lastname }}, {{ address.street }}, {{
+        address.district }}, {{ address.city }}, {{ address.province }}, {{
+        address.country }}, {{ address.postal_code }}
+      </p>
+      <ion-button
+        fill="clear"
+        class="edit-button"
+        (click)="openShippingModal()"
+      >
+        <ion-icon slot="icon-only" name="pencil-outline"></ion-icon>
+      </ion-button>
+    </div>
+  </div>
+
+  <!-- Shipping Modal -->
+  <ion-modal
+    [isOpen]="isShippingModalOpen"
+    (ionModalDidDismiss)="closeShippingModal()"
+    [breakpoints]="breakpoints"
+    [initialBreakpoint]="initialBreakpoint"
+  >
+    <ng-template>
+      <ion-content
+        [fullscreen]="true"
+        class="shipping-address-page ion-padding"
+      >
+        <h2 class="text">Shipping Address</h2>
+        <ion-list>
+          <ion-item *ngFor="let address of addresses">
+            <ion-label>
+              <h2>{{ address.street }}</h2>
+              <p>
+                {{ address.city }}, {{ address.province }} {{
+                address.postal_code }}
+              </p>
+            </ion-label>
+            <ion-button fill="outline" (click)="selectAddress(address)"
+              >Select</ion-button
+            >
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+  <!-- Contact Information Section -->
+  <div class="section">
+    <div class="section-title">
+      <h2>Contact Information</h2>
+    </div>
+    <div class="section-content compact">
+      <div class="contact-info">
+        <p>{{ contact.phone_number }}</p>
+        <p>{{ contact.email }}</p>
+      </div>
+      <ion-button fill="clear" class="edit-button" (click)="openContactModal()">
+        <ion-icon slot="icon-only" name="pencil-outline"></ion-icon>
+      </ion-button>
+    </div>
+  </div>
+
+  <!-- Contact Modal -->
+  <ion-modal
+    [isOpen]="isContactModalOpen"
+    (ionModalDidDismiss)="closeContactModal()"
+    [breakpoints]="breakpoints"
+    [initialBreakpoint]="initialBreakpoint"
+  >
+    <ng-template>
+      <ion-content [fullscreen]="true" class="contact-info-page ion-padding">
+        <h2 class="text">Contact Information</h2>
+        <ion-list>
+          <ion-item>
+            <ion-label position="stacked">Phone</ion-label>
+            <ion-input
+              [(ngModel)]="contact.phone_number"
+              placeholder="Enter your phone number"
+            ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Email</ion-label>
+            <ion-input
+              [(ngModel)]="contact.email"
+              placeholder="Enter your email"
+            ></ion-input>
+          </ion-item>
+        </ion-list>
+        <ion-button
+          class="button-contact"
+          expand="block"
+          color="primary"
+          (click)="saveContactChanges()"
+          >Save Changes</ion-button
+        >
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+  <!-- Items Section -->
+  <div class="section items">
+    <div class="section-title">
+      <h2 class="text">Items</h2>
+      <div class="item-count">{{ cartItems.length }}</div>
+    </div>
+    <div
+      class="discount-badge"
+      [ngClass]="{'voucher-applied': voucherApplied}"
+      (click)="voucherApplied ? null : openVoucherModal()"
+    >
+      {{ voucherApplied ? (selectedVoucher.type === 'percentage_discount' ?
+      selectedVoucher.discount_amount + '% Discount Applied' : '$' +
+      selectedVoucher.discount_amount + ' Discount Applied') : 'Add Voucher' }}
+      <ion-icon
+        *ngIf="voucherApplied"
+        name="close-circle"
+        (click)="removeVoucher()"
+      ></ion-icon>
+    </div>
+
+    <!-- Voucher Modal -->
+    <ion-modal
+      [isOpen]="isVoucherModalOpen"
+      (ionModalDidDismiss)="closeVoucherModal()"
+      [breakpoints]="breakpoints"
+      [initialBreakpoint]="initialBreakpoint"
+    >
+      <ng-template>
+        <ion-content [fullscreen]="true" class="voucher-page ion-padding">
+          <h2 class="text">Add Voucher</h2>
+          <div *ngFor="let voucher of vouchers">
+            <div class="vouchers-section">
+              <div class="voucher-card">
+                <div class="voucher-header">
+                  <div class="voucher-title">{{ voucher.name }}</div>
+                  <div class="voucher-details">
+                    <span class="badge light"
+                      >{{ getDaysLeft(voucher.end_date) }} days left</span
+                    >
+                    <span class="badge secondary"
+                      >Valid Until {{ voucher.end_date | date:'MM.dd.yy'
+                      }}</span
+                    >
+                  </div>
+                </div>
+                <div class="voucher-content">
+                  <div class="voucher-info">
+                    <h3>
+                      <ion-icon name="cart-outline"></ion-icon> First Purchase
+                    </h3>
+                    <p>
+                      {{ voucher.type === 'percentage_discount' ?
+                      voucher.discount_amount + '% off' : '$' +
+                      voucher.discount_amount + ' off' }} for your next order
+                    </p>
+                  </div>
+                  <ion-button
+                    fill="solid"
+                    class="collected-button"
+                    (click)="applyVoucher(voucher)"
+                    >Apply</ion-button
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+
+    <div class="item-list">
+      <ion-item class="no-bottom-border" *ngFor="let item of cartItems">
+        <div class="thumbnail-wrapper">
+          <ion-thumbnail slot="start">
+            <img
+              [src]="'https://swiftyleshop.com/' + item.product.data.image"
+              alt=""
+            />
+          </ion-thumbnail>
+          <div class="badge">{{ item.quantity }}</div>
+        </div>
+        <ion-label>
+          <h3>
+            {{ item.product.data.name }}
+            <span class="price"
+              >{{ item.product.data.price | currency:'Rp' }}</span
+            >
+          </h3>
+        </ion-label>
+      </ion-item>
+    </div>
+  </div>
+
+  <!-- Shipping Options Section -->
+  <div class="section">
+    <div class="section-title">
+      <h2 class="text">Shipping Options</h2>
+      <ion-button
+        fill="clear"
+        class="edit-button"
+        style="margin-left: auto"
+        (click)="openShippingOptionsModal()"
+      >
+        <ion-icon
+          slot="icon-only"
+          name="pencil-outline"
+          class="icon-btn"
+        ></ion-icon>
+      </ion-button>
+    </div>
+    <ion-radio-group [(ngModel)]="selectedShippingOption">
+      <ion-item
+        *ngFor="let category of selectedCourierCategories"
+        class="shipping-option"
+        [ngClass]="{'selected': selectedShippingOption === category}"
+        (click)="changeShipping(category)"
+      >
+        <div class="checkmark"></div>
+        <ion-label class="shipping-label">
+          <h3>{{ category.category.name }}</h3>
+          <p>{{ category.category.courier_costs }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-radio-group>
+    <p class="delivery-date">Delivered on or before {{ deliveryDate }}</p>
+  </div>
+
+  <ion-modal
+    [isOpen]="isShippingOptionsModalOpen"
+    (ionModalDidDismiss)="closeShippingOptionsModal()"
+    [breakpoints]="breakpoints"
+    [initialBreakpoint]="initialBreakpoint"
+  >
+    <ng-template>
+      <ion-content
+        [fullscreen]="true"
+        class="shipping-options-page ion-padding"
+      >
+        <h2 class="text">Shipping Options</h2>
+        <div class="variation-buttons">
+          <ion-button
+            *ngFor="let courier of getUniqueCouriers()"
+            size="small"
+            class="btn-c"
+            (click)="selectCourier(courier.name)"
+          >
+            {{ courier.name }}
+          </ion-button>
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+  <!-- Total and Confirm Order -->
+  <div class="total-cart-bar">
+    <div class="cart-total">
+      <ion-row>
+        <ion-col>
+          <h3>Total {{ total | currency:'Rp' }}</h3>
+        </ion-col>
+        <ion-col class="checkout-btn">
+          <ion-button expand="block" (click)="checkoutOrder()">
+            Confirm Your Order
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+</ion-content>

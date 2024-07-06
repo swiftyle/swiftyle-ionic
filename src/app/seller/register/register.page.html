@@ -1,0 +1,39 @@
+<ion-content class="ion-padding register-content" [fullscreen]="true">
+  <div class="register-container">
+    <ion-title>
+      Register
+    </ion-title>
+    
+    <ion-item class="register-item">
+      <ion-icon name="person-outline" slot="start"></ion-icon>
+      <ion-input placeholder="Full Name" type="text"></ion-input>
+    </ion-item>
+    
+    <ion-item class="register-item">
+      <ion-icon name="mail-outline" slot="start"></ion-icon>
+      <ion-input placeholder="Email Address" type="email"></ion-input>
+    </ion-item>
+
+    <ion-item class="register-item">
+      <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+      <ion-input placeholder="Password" type="password">
+        <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+      </ion-input>
+    </ion-item>
+
+    <ion-item class="register-item">
+      <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+      <ion-input placeholder="Retype Password" type="password">
+        <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+      </ion-input>
+    </ion-item>
+
+    <ion-item class="register-item">
+      <ion-input placeholder="Enter OTP" type="number" maxlength="6"></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" class="primary">REGISTER</ion-button>
+
+    <p>Already have an account? <a [routerLink]="['/login']">Sign in</a></p>
+  </div>
+</ion-content>

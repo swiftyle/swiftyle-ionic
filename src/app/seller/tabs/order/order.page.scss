@@ -1,0 +1,132 @@
+.profile-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    color: #E75C69;
+    background: #E75C69;
+}
+
+.avatar-img img {
+    border: 2px solid #ffffff;
+    border-radius: 15px;
+}
+
+.square-avatar {
+    width: 100px;
+    height: 100px;
+    margin-left: -12px;
+    border-radius: 0; /* Make the avatar square */
+}
+
+.profile-info {
+    flex-grow: 1;
+    padding-left: 15px;
+}
+
+.profile-info h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #ffffff;
+}
+
+.profile-info p {
+    margin: 0;
+    color: #ffffff;
+    font-size: 12px;
+}
+
+.profile-icons {
+    margin-right: -5px;
+    display: flex;
+    gap: 10px;
+}
+
+.icon-wrapper {
+    background-color: #F8F8F8;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-icons ion-icon {
+    font-size: 20px;
+    color: #E75C69;
+}
+
+ion-list {
+    z-index: 1;
+    margin-top: 10px;
+}
+
+ion-item {
+    --inner-padding-top: 10px;
+    --inner-padding-bottom: 10px;
+    background: white;
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+ion-label h2 {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+ion-label p {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.review-button {
+    --border-color: #E75C69;
+    --color: #E75C69;
+    --border-radius: 10px;
+    --padding-start: 10px;
+    --padding-end: 10px;
+    --min-height: 30px;
+    height: 35px;
+}
+
+.review-button::part(native) {
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.review-modal-content {
+    --background: #f8f8f8;
+}
+
+.review-container {
+    padding: 16px;
+}
+
+.review-container ion-item {
+    --background: #f8f8f8;
+}
+
+.review-container .stars {
+    display: flex;
+    margin: 16px 0;
+}
+
+.review-container .stars ion-icon {
+    font-size: 32px;
+    color: #ffd700;
+    margin: 0 4px;
+}
+
+.review-container ion-textarea {
+    background-color: #ffecec;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.submit-button {
+    background-color: #f26464;
+    color: white;
+}

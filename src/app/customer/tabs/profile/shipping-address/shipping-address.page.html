@@ -1,0 +1,85 @@
+<ion-content [fullscreen]="true">
+  <div class="settings-container">
+    <div class="settings-title">Settings</div>
+    <div class="address-container">
+      <h2>Shipping Address</h2>
+      <ion-list>
+        <ion-item>
+          <ion-label position="floating">First Name</ion-label>
+          <ion-input [(ngModel)]="firstName" placeholder="Required"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Last Name</ion-label>
+          <ion-input [(ngModel)]="lastName" placeholder="Required"></ion-input>
+        </ion-item>
+        <ion-row>
+          <ion-col size="6">
+            <ion-item>
+              <ion-label>Type</ion-label>
+              <ion-select [(ngModel)]="addressType">
+                <ion-select-option value="Home">Home</ion-select-option>
+                <ion-select-option value="Work">Work</ion-select-option>
+                <ion-select-option value="Other">Other</ion-select-option>
+              </ion-select>
+            </ion-item>
+          </ion-col>
+          <ion-col size="6">
+            <ion-item>
+              <ion-label>Primary</ion-label>
+              <ion-toggle [(ngModel)]="isPrimary" mode="ios"></ion-toggle>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-item>
+          <ion-label>Country</ion-label>
+          <ion-select [(ngModel)]="selectedCountry" placeholder="Choose your country">
+            <ion-select-option value="USA">USA</ion-select-option>
+            <ion-select-option value="Canada">Canada</ion-select-option>
+            <ion-select-option value="UK">UK</ion-select-option>
+            <ion-select-option value="Australia">Australia</ion-select-option>
+            <ion-select-option value="Indonesia">Indonesia</ion-select-option>
+            <ion-select-option value="Germany">Germany</ion-select-option>
+            <ion-select-option value="France">France</ion-select-option>
+            <ion-select-option value="Japan">Japan</ion-select-option>
+            <ion-select-option value="South Korea">South Korea</ion-select-option>
+            <ion-select-option value="Russia">Russia</ion-select-option>
+            <ion-select-option value="China">China</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Province</ion-label>
+          <ion-input [(ngModel)]="province" placeholder="Required"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Town / City</ion-label>
+          <ion-input [(ngModel)]="townCity" placeholder="Required"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">District</ion-label>
+          <ion-input [(ngModel)]="district" placeholder="Required"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Street</ion-label>
+          <ion-input [(ngModel)]="street" placeholder="Required"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">House Number</ion-label>
+          <ion-input [(ngModel)]="houseNumber" placeholder="Optional"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Apartment Number</ion-label>
+          <ion-input [(ngModel)]="apartmentNumber" placeholder="Optional"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Postcode</ion-label>
+          <ion-input [(ngModel)]="postcode" placeholder="Required"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Phone Number</ion-label>
+          <ion-input [(ngModel)]="phoneNumber" placeholder="Required"></ion-input>
+        </ion-item>
+      </ion-list>
+      <ion-button expand="block" color="primary" class="save-button" (click)="saveChanges()">Save Changes</ion-button>
+    </div>
+  </div>
+</ion-content>

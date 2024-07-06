@@ -1,0 +1,213 @@
+<ion-content [fullscreen]="true" #pageContent>
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ng-container *ngIf="cartItems && cartItems.length > 0">
+    <!-- Display when cart has items -->
+    <div class="checkout-header">
+      <h1>Cart</h1>
+      <div class="cart-count">
+        <span>{{ cartItems.length }}</span>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">
+        <h2>Shipping Address</h2>
+      </div>
+      <div class="section-content compact">
+        <p>{{ address }}</p>
+        <ion-button fill="clear" class="edit-button" (click)="openShippingModal()">
+          <ion-icon slot="icon-only" name="pencil-outline"></ion-icon>
+        </ion-button>
+      </div>
+    </div>
+
+    <ion-modal [isOpen]="isShippingModalOpen" (ionModalDidDismiss)="closeShippingModal()" [breakpoints]="breakpoints"
+      [initialBreakpoint]="initialBreakpoint">
+      <ng-template>
+        <ion-content [fullscreen]="true" class="shipping-address-page ion-padding">
+          <h2 class="text">Shipping Address</h2>
+          <ion-list>
+            <ion-item *ngFor="let address of addresses">
+              <ion-label>
+                <h2>{{ address.street }}</h2>
+                <p>{{ address.city }}, {{ address.province }} {{ address.postal_code }}</p>
+              </ion-label>
+              <ion-button fill="outline" (click)="selectAddress(address)">Select</ion-button>
+            </ion-item>
+          </ion-list>
+          <!-- <ion-button expand="block" class="button-pink" (click)="saveShippingChanges()">Save Changes</ion-button> -->
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+
+    <ion-card class="card-content">
+      <ion-card-header>
+        <ion-card-title class="judul">{{ cartItems[0]?.product?.data?.shops?.name }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <div *ngFor="let item of cartItems; let i = index" class="cart-item">
+          <img [src]="'https://swiftyleshop.com/' + item.product.data.image" [alt]="item.product.data.name"
+            class="item-image">
+          <div class="item-details">
+            <h2>{{ item.product.data.name }}</h2>
+            <div class="attributes">
+              <select [(ngModel)]="item.selectedSize">
+                <option *ngFor="let size of item.product.data.sizes" [ngValue]="size">
+                  {{ size.name }}
+                </option>
+              </select>
+              <select [(ngModel)]="item.selectedColor">
+                <option *ngFor="let color of item.selectedSize.colors" [ngValue]="color">
+                  {{ color.name }} (Stock: {{ color.pivot.stock }})
+                </option>
+              </select>
+            </div>
+            <p>Rp{{ item.product.data.price | number }}</p>
+          </div>
+          <div class="item-controls">
+            <ion-button fill="clear" color="danger" class="trash-button" (click)="removeFromCart(item.id)">
+              <ion-icon name="trash-outline" size="small" class="icon-outline"></ion-icon>
+            </ion-button>
+            <div class="control-buttons">
+              <ion-button size="small" fill="outline" (click)="decrementQuantity(item)">-</ion-button>
+              <span class="text-number">{{ item.quantity }}</span>
+              <ion-button size="small" fill="outline" (click)="incrementQuantity(item)">+</ion-button>
+            </div>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <div class="ion-padding">
+      <div class="container">
+        <ion-icon name="ticket-outline" class="icon" size="large" color="danger"></ion-icon>
+        <p class="ion-padding">Rp80k more to get Coupon Rp10k Off</p>
+      </div>
+    </div>
+
+    <!-- Wishlist Items -->
+    <ion-card class="content-card" *ngIf="wishlistItems.length > 0">
+      <ion-card-header>
+        <ion-card-title class="judul">From Your Wishlist</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <div *ngFor="let item of wishlistItems; let i = index" class="wishlist-item">
+          <img [src]="'https://swiftyleshop.com/' + item.product.data.image" [alt]="item.product.data.name"
+            class="item-image">
+          <div class="item-details">
+            <h2>{{ item.product.data.name }}</h2>
+            <p>Rp{{ item.product.data.price | number }}</p>
+            <div class="attributes">
+              <select [(ngModel)]="item.selectedSize"
+                (ngModelChange)="item.selectedColor = item.selectedSize.colors[0]">
+                <option *ngFor="let size of item.product.data.sizes" [ngValue]="size">
+                  {{ size.name }}
+                </option>
+              </select>
+              <select [(ngModel)]="item.selectedColor">
+                <option *ngFor="let color of item.selectedSize.colors" [ngValue]="color">
+                  {{ color.name }} (Stock: {{ color.pivot.stock }})
+                </option>
+              </select>
+            </div>
+            <div class="item-controls">
+              <ion-button fill="clear" color="primary" (click)="addItemFromWishlist(i)">
+                <ion-icon name="bag-add-outline" size="small" class="icon-outline"></ion-icon>
+              </ion-button>
+            </div>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <div class="total-cart-bar">
+      <div class="cart-total">
+        <ion-row>
+          <ion-col>
+            <h3>Total {{ getTotalPrice() | currency:'Rp' }}</h3>
+          </ion-col>
+          <ion-col size="4" class="checkout-btn">
+            <ion-button expand="block" (click)="goToCheckout()">Checkout</ion-button>
+          </ion-col>
+        </ion-row>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="cartItems && cartItems.length === 0">
+    <!-- Display when cart is empty -->
+    <div class="checkout-header">
+      <h1>Cart</h1>
+      <div class="cart-count">
+        <span>{{ cartItems.length }}</span>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">
+        <h2>Shipping Address</h2>
+      </div>
+      <div class="section-content compact">
+        <p>{{ address }}</p>
+        <ion-button fill="clear" class="edit-button" (click)="openShippingModal()">
+          <ion-icon slot="icon-only" name="pencil-outline"></ion-icon>
+        </ion-button>
+      </div>
+    </div>
+
+    <div class="center-container">
+      <div class="heart-icon-container">
+        <ion-icon class="heart-icon" name="bag-handle-outline"></ion-icon>
+      </div>
+    </div>
+
+    <!-- Wishlist Items -->
+    <ion-card class="content-card" *ngIf="wishlistItems.length > 0">
+      <ion-card-header>
+        <ion-card-title class="judul">From Your Wishlist</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <div *ngFor="let item of wishlistItems; let i = index" class="wishlist-item">
+          <img [src]="'https://swiftyleshop.com/' + item.product.data.image" [alt]="item.product.data.name"
+            class="item-image">
+          <div class="item-details">
+            <h2>{{ item.product.data.name }}</h2>
+            <p>Rp{{ item.product.data.price | number }}</p>
+            <div class="attributes">
+              <select [(ngModel)]="item.selectedSize"
+                (ngModelChange)="item.selectedColor = item.selectedSize.colors[0]">
+                <option *ngFor="let size of item.product.data.sizes" [ngValue]="size">
+                  {{ size.name }}
+                </option>
+              </select>
+              <select [(ngModel)]="item.selectedColor">
+                <option *ngFor="let color of item.selectedSize.colors" [ngValue]="color">
+                  {{ color.name }} (Stock: {{ color.pivot.stock }})
+                </option>
+              </select>
+            </div>
+            <div class="item-controls">
+              <ion-button fill="clear" color="primary" (click)="addItemFromWishlist(i)">
+                <ion-icon name="bag-add-outline" size="small" class="icon-outline"></ion-icon>
+              </ion-button>
+            </div>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </ng-container>
+  <div class="total-cart-bar">
+    <div class="cart-total">
+      <ion-row>
+        <ion-col>
+          <h3>Total {{ getTotalPrice() | currency:'Rp' }}</h3>
+        </ion-col>
+        <ion-col class="checkout-btn">
+          <ion-button expand="block" (click)="goToCheckout()">Checkout</ion-button>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+</ion-content>

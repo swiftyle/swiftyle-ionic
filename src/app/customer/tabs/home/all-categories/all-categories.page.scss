@@ -1,0 +1,140 @@
+ion-content {
+    --background: #fff;
+}
+
+ion-header {
+    --background: transparent;
+    --border-color: transparent;
+}
+
+ion-toolbar {
+    --background: #fff;
+}
+
+ion-title {
+    font-size: 3vh;
+    font-weight: bold;
+}
+
+ion-buttons ion-button {
+    color: #000;
+}
+
+.segment-buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.segment-button {
+    color: #000;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background: #F9F9F9;
+    width: 80%;
+}
+
+.segment-button.selected {
+    color: #f06292;
+    border-color: #f06292;
+    background: #f8f8f8;
+}
+
+ion-list {
+    margin: 0;
+    padding: 0;
+    width: 48vh;
+}
+
+ion-item {
+    --background: transparent;
+    --inner-padding-end: 0;
+    --padding-start: 0;
+    --min-height: 48px;
+    border-bottom: 1px solid #f1f1f1;
+    border-radius: 20px;
+}
+
+ion-thumbnail img {
+    border-radius: 8px;
+    margin-left: 12px;
+    width: 50px;
+    height: auto;
+}
+
+ion-button {
+    --border-color: #FFEBEB;
+    --border-radius: 8px;
+    --padding-start: 8px;
+    --padding-end: 8px;
+    --padding-top: 4px;
+    --padding-bottom: 4px;
+    --inner-padding-end: 0;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: #000;
+    height: 50px;
+}
+
+ion-button ion-icon {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ion-grid {
+    padding: 8px;
+}
+
+ion-row {
+    margin-bottom: 8px;
+}
+
+ion-row ion-col {
+    padding: 4px;
+}
+
+ion-item[button] {
+    --background-hover: transparent;
+    --background-focused: transparent;
+    --background-activated: transparent;
+}
+
+ion-icon {
+    font-size: 2em;
+    color: var(--ion-color-primary);
+}
+
+.arrow {
+    background: var(--ion-color-primary);
+    border-radius: 20px;
+    height: 35px;
+}
+
+.arrow ion-icon {
+    color: #ffffff;
+    font-size: 1.5em;
+    /* Increase the size of the arrow icon */
+}
+
+.star-icon {
+    color: #f06292;
+    margin-left: 4px;
+    font-size: 1em;
+}
+
+.close {
+    color: #000;
+}
+
+ion-label {
+    font-weight: bold;
+}
+
+.segment-button.selected {
+    color: var(--ion-color-primary);
+    font-weight: bold;
+}
+
+ion-icon.rotated {
+    transform: rotate(180deg);
+    transition: transform 0.3s;
+}

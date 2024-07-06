@@ -1,0 +1,129 @@
+ion-content {
+    --background: linear-gradient(to top, #ffffff 72%, var(--ion-color-primary) 50%);
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    font-family: var(--font-family);
+  }
+  
+  .profile-header {
+    margin-left: -12px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    color: var(--ion-color-primary); /* Set the text color to match the icon color */
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+  
+  .profile-header ion-avatar {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #ffffff; /* Updated border color to match icon color */
+    border-radius: 50%;
+  }
+  
+  .profile-info {
+    flex-grow: 1;
+    padding-left: 15px;
+  }
+  
+  .profile-info h2 {
+    margin: 0;
+    font-size: 15px;
+    color: #ffffff; /* Updated text color */
+  }
+  
+  .profile-info p {
+    margin: 0;
+    color: #ffffff; /* Updated text color */
+    font-size: 12px;
+  }
+  
+  /* Styles for the new icons */
+  .profile-icons {
+    margin-right: -15px;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .icon-wrapper {
+    background-color: #F8F8F8; /* Set background color for icons */
+    width: 30px; /* Set width for icons */
+    height: 30px; /* Set height for icons */
+    border-radius: 15px; /* Rounded corners */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .profile-icons ion-icon {
+    font-size: 20px;
+    color: var(--ion-color-primary); /* Set icon color */
+  }
+  
+  .welcome-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    color: white;
+  }
+  
+  .welcome-message h2 {
+    margin: 0;
+    font-size: 3vh;
+    font-weight: bold;
+    margin-left: -15px;
+  }
+  
+  .visit-store-btn {
+    margin: 0;
+    --background-color: #F8F8F8;
+    color: var(--ion-color-primary);
+    --border-radius: 13px;
+    height: 40px;
+    line-height: 1;
+    font-size: 10px;
+  }
+  
+  .create-store-card {
+    width: 100%;
+    margin: 10px auto; /* Adjusted margin to bring the card up */
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .create-store-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .create-store-container p {
+    color: black;
+    margin: 0;
+    font-size: 17px;
+  }
+  
+  .arrow-button {
+    --background: var(--ion-color-primary);
+    --color: #ffffff;
+    --border-radius: 20px;
+  }
+  
+  .shop-orders {
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  
+  .shop-orders ion-chip {
+    margin: 5px;
+    background-color: #FCE5E5;
+    color: var(--ion-color-primary);
+  }
+  

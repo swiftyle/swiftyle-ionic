@@ -1,0 +1,201 @@
+.profile-header {
+  color: var(--ion-color-primary);
+  height: 180px;
+  background: var(--ion-color-primary);
+}
+
+.profile-text {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.avatar-img img {
+  border: 4px solid #ffffff;
+  border-radius: 15px;
+}
+
+.ion-padding {
+  margin-top: -50px;
+}
+
+.square-avatar {
+  width: 100px;
+  height: 100px;
+  margin-left: -12px;
+  border-radius: 0; /* Make the avatar square */
+}
+
+.profile-info {
+  flex-grow: 1;
+  padding-left: 15px;
+}
+
+.profile-info h2 {
+  margin: 0;
+  font-size: 24px;
+  color: #ffffff;
+}
+
+.profile-info p {
+  margin: 0;
+  color: #ffffff;
+  font-size: 12px;
+}
+
+.profile-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.icon-profile {
+  margin-right: 20px;
+}
+
+.icon-wrapper {
+  background-color: #F8F8F8;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-icons ion-icon {
+  font-size: 20px;
+  color: var(--ion-color-primary);
+}
+
+.profile-header ion-avatar {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #ffffff;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1608);
+  /* Updated border color to match icon color */
+  border-radius: 50%;
+}
+
+.profile-info {
+  flex-grow: 1;
+  padding-left: 15px;
+}
+
+.profile-info h2 {
+  margin: 0;
+  font-size: 15px;
+  color: #ffffff;
+  /* Updated text color */
+}
+
+.profile-info p {
+  margin: 0;
+  color: #ffffff;
+  /* Updated text color */
+  font-size: 12px;
+}
+
+/* Styles for the new icons */
+.profile-icons {
+  margin-right: -15px;
+  display: flex;
+  gap: 10px;
+}
+
+.icon-wrapper {
+  background-color: #F8F8F8;
+  /* Set background color for icons */
+  width: 30px;
+  /* Set width for icons */
+  height: 30px;
+  /* Set height for icons */
+  border-radius: 15px;
+  /* Rounded corners */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-icons ion-icon {
+  font-size: 20px;
+  color: var(--ion-color-primary);
+  /* Set icon color */
+}
+
+.welcome-container {
+  margin-top: -120px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+  color: white;
+}
+
+.welcome-message h1 {
+  margin: 0;
+  font-size: 4.5vh;
+  font-weight: 500;
+}
+
+.visit-store-btn {
+  margin: 0;
+  --background-color: #F8F8F8;
+  color: var(--ion-color-primary);
+  --border-radius: 13px;
+  height: 40px;
+  line-height: 1;
+  font-size: 10px;
+}
+
+.create-store-card {
+  width: 100%;
+  margin: 20px auto;
+  /* Adjusted margin to bring the card up */
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.create-store-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.create-store-container p {
+  color: black;
+  margin: 0;
+  font-size: 17px;
+}
+
+.arrow-button {
+  --background: var(--ion-color-primary);
+  --color: #ffffff;
+  --border-radius: 20px;
+}
+
+.shop-orders {
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.shop-orders ion-chip {
+  margin: 5px;
+  background-color: #FCE5E5;
+  color: var(--ion-color-primary);
+}
+
+h1 {
+  font-size: 3vh;
+  font-weight: 500;
+}
+
+ion-img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px; /* Tambahkan jika ingin gambar berbentuk rounded */
+}

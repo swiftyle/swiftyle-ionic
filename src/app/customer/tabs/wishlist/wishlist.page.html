@@ -1,0 +1,72 @@
+<ion-content>
+  <div class="top-bar" lines="none">
+    <ion-grid>
+      <ion-row class="bar">
+        <ion-col size="12">
+          <h1>Wishlist <ion-badge>{{ wishlistItems.length }}</ion-badge></h1>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <ion-searchbar placeholder="Search"></ion-searchbar>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <ion-grid class="wishlist-items" *ngIf="wishlistItems.length > 0; else noItemsTemplate">
+    <ion-row>
+      <ion-col size="12" *ngFor="let item of wishlistItems; let i = index">
+        <div class="wishlist-item">
+          <img [src]="'https://swiftyleshop.com/' + item.product.data.image" alt="{{ item.product.data.name }}">
+          <div class="details">
+            <h2>{{ item.product.data.name }}</h2>
+            <p>{{ item.product.data.description }}</p>
+            <div class="prices">
+              <span class="current-price">Rp{{ item.product.data.price }}</span>
+              <span class="old-price" *ngIf="item.product.data.oldPrice">Rp{{ item.product.data.oldPrice }}</span>
+            </div>
+            <div class="attributes">
+              <select [(ngModel)]="item.selectedSize" (ngModelChange)="item.selectedColor = item.selectedSize.colors[0]">
+                <option *ngFor="let size of item.product.data.sizes" [ngValue]="size">
+                  {{ size.name }}
+                </option>
+              </select>
+              <select [(ngModel)]="item.selectedColor">
+                <option *ngFor="let color of item.selectedSize.colors" [ngValue]="color">
+                  {{ color.name }} (Stock: {{ color.pivot.stock }})
+                </option>
+              </select>
+            </div>
+          </div>
+          <div class="icons">
+            <ion-icon name="trash-outline" (click)="removeItemFromWishlist(item.id)" class="icon-trash"></ion-icon>
+            <ion-icon name="cart-outline" (click)="addToCart(item)" class="icon-cart"></ion-icon>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ng-template #noItemsTemplate>
+    <div class="center-container">
+      <div class="heart-icon-container">
+        <ion-icon class="heart-icon" name="heart-outline"></ion-icon>
+        <div class="sunburst">
+          <div class="ray"></div>
+          <div class="ray"></div>
+          <div class="ray"></div>
+          <div class="ray"></div>
+          <div class="ray"></div>
+          <div class="ray"></div>
+          <div class="ray"></div>
+          <div class="ray"></div>
+          <div class="ray"></div>
+          <div class="ray"></div>
+          <div class="ray"></div>
+          <div class="ray"></div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</ion-content>

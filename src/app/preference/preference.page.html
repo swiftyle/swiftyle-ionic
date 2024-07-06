@@ -1,0 +1,41 @@
+<ion-content>
+  <div class="container">
+    <img src="assets/images/bg/preference.png" class="background-image" alt="Background" />
+    <swiper-container [pagination]="{ clickable: true }" (swiper)="onSwiper($event)" (slideChange)="onSlideChange()">
+      <swiper-slide>
+        <ion-card class="preference-card">
+          <ion-card-content>
+            <h2>Preference</h2>
+            <p>Choose your style</p>
+            <div class="preference-grid">
+              <div class="style" *ngFor="let style of styles" fill="clear" (click)="selectStyle(style)"
+                [class.selected]="isSelected(style)">
+                <div class="style-image">
+                  <img [src]="style.image" alt="{{style.name}}" />
+                  <span class="check-badge" *ngIf="isSelected(style)">&#10003;</span>
+                </div>
+                <span class="style-name">{{style.name}}</span>
+              </div>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </swiper-slide>
+      <swiper-slide>
+        <ion-card class="final-card">
+          <div class="card-image">
+            <img src="assets/images/ready.png" alt="Final Card Image" />
+          </div>
+          <ion-card-content>
+            <h2>Ready?</h2>
+            <p>"Start Your Shopping Adventure Today and Find Your Favorite Items with Unmissable Special Offers"</p>
+            <ion-button expand="block" color="primary" (click)="submitSelectedStyles()">Let's Start</ion-button>
+          </ion-card-content>
+        </ion-card>
+      </swiper-slide>
+    </swiper-container>
+  </div>
+  <div class="pagination">
+    <div class="page-dot" [class.active]="activeIndex === 0"></div>
+    <div class="page-dot" [class.active]="activeIndex === 1"></div>
+  </div>
+</ion-content>

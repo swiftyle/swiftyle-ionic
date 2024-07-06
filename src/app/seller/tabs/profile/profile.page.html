@@ -1,0 +1,48 @@
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="profile-header">
+    <ion-avatar>
+      <img [src]="userService.user.avatar" alt=""/>
+    </ion-avatar>
+    <div class="profile-info">
+      <h2>Swiftyle.official</h2>
+      <p>Pengikut 99 | Mengikuti 99</p>
+    </div>
+    <!-- Add the new div here -->
+    <div class="profile-icons">
+      <div class="icon-wrapper">
+        <ion-icon name="menu-outline"></ion-icon>
+      </div>
+      <div class="icon-wrapper" [routerLink]="'/voucher'">
+        <ion-icon name="pricetag-outline"></ion-icon>
+      </div>
+      <div class="icon-wrapper" [routerLink]="'/profile-setting'">
+        <ion-icon name="settings-outline"></ion-icon>
+      </div>
+    </div>
+  </div>
+  <div class="welcome-container">
+    <div class="welcome-message">
+      <h2>Hello, Swiftyle!</h2>
+    </div>
+    <!-- <ion-button color="light" class="visit-store-btn">
+      Visit Store
+    </ion-button> -->
+  </div>
+  <ion-card class="create-store-card">
+    <ion-card-content>
+      <div class="create-store-container">
+        <p>Back to Customer</p>
+        <ion-button fill="clear" class="arrow-button" [routerLink]="'/tabs/profile'">
+          <ion-icon slot="icon-only" name="arrow-forward-outline"></ion-icon>
+        </ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  <h1>Shop Orders</h1>
+  <div class="shop-orders">
+    <ion-chip color="secondary">To Package</ion-chip>
+    <ion-chip color="secondary">To Ship</ion-chip>
+    <ion-chip color="secondary">To Refund</ion-chip>
+    <ion-chip color="secondary">Store Rating</ion-chip>
+  </div>
+</ion-content>
