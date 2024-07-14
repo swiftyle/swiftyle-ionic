@@ -117,15 +117,11 @@
             </ion-item>
             
             <div class="stars">
-              <ion-icon name="star-outline"></ion-icon>
-              <ion-icon name="star-outline"></ion-icon>
-              <ion-icon name="star-outline"></ion-icon>
-              <ion-icon name="star-outline"></ion-icon>
-              <ion-icon name="star-outline"></ion-icon>
+              <ion-icon *ngFor="let star of starsArray; let i = index" name="star" [class.filled]="i < rating" (click)="setRating(i + 1)"></ion-icon>
             </div>
             
-            <ion-textarea placeholder="Your comment"></ion-textarea>
-            <ion-button expand="full" class="submit-button" (click)="submitReview()">Say it!</ion-button>
+            <ion-textarea [(ngModel)]="comment" placeholder="Your comment"></ion-textarea>
+            <ion-button expand="full" class="submit-button" (click)="submitReview()">Submit</ion-button>
           </div>
         </div>
       </ion-content>

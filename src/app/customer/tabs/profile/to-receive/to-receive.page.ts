@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController, NavController } from '@ionic/angular';
+import { AlertController } from '@ionic/angular';
 import { DataRefreshService } from 'src/app/services/data-refresh/data-refresh.service';
 import { OrderService } from 'src/app/services/order/order.service';
 import { UserService } from 'src/app/services/user/user.service';
+import { ReviewService } from 'src/app/services/review/review.service';
 
 @Component({
   selector: 'app-to-receive',
@@ -11,19 +12,18 @@ import { UserService } from 'src/app/services/user/user.service';
 })
 export class ToReceivePage implements OnInit {
   orders: any[] = [];
-  orderId: string = ''; // Initialize as an empty array
-  deliveredOrders: any[] = [];
   isReviewModalOpen = false;
-  breakpoints = [0, 0.5, 1];
-  initialBreakpoint = 0.5;
   selectedOrder: any = null;
   productNames: string = '';
+  rating = 0;
+  comment = '';
+  starsArray = Array(5).fill(0);
 
   constructor(
-    private navCtrl: NavController,
     public userService: UserService,
     private dataRefreshService: DataRefreshService,
     private orderService: OrderService,
+    private reviewService: ReviewService,
     private alertController: AlertController
   ) {}
 
@@ -42,42 +42,63 @@ export class ToReceivePage implements OnInit {
         this.orders = ordersWithDetails;
         console.log('Order Loaded:', ordersWithDetails);
       } else {
-        console.error('Unexpected response format:', ordersWithDetails);
+        console.error('Invalid order data:', ordersWithDetails);
       }
     } catch (error) {
-      console.error('Failed to fetch orders:', error);
+      console.error('Failed to load orders:', error);
     }
   }
 
-  filterDeliveredOrders() {
-    this.deliveredOrders = this.orders.filter(order => order.status === 'delivered');
-  }
-
-  
   openReviewModal(order: any) {
     this.selectedOrder = order;
-    this.productNames = this.getProductNames(order);
+    this.productNames = order.checkout.products.map((product: any) => product.name).join(', ');
     this.isReviewModalOpen = true;
-  }
-  
-  getProductNames(order: any): string {
-    return order.checkout.products.map((product:any) => product.name).join(', ');
   }
 
   closeReviewModal() {
     this.isReviewModalOpen = false;
     this.selectedOrder = null;
+    this.rating = 0;
+    this.comment = '';
   }
 
+  setRating(rating: number) {
+    this.rating = rating;
+  }
 
   async submitReview() {
-    this.closeReviewModal();
-    const alert = await this.alertController.create({
-      header: 'Review Submitted',
-      message: 'Thank you for your review!',
-      buttons: ['OK'],
-    });
+    if (this.rating === 0 || this.comment.trim() === '') {
+      const alert = await this.alertController.create({
+        header: 'Incomplete Review',
+        message: 'Please provide a rating and a comment.',
+        buttons: ['OK'],
+      });
+      await alert.present();
+      return;
+    }
 
-    await alert.present();
+    try {
+      await this.reviewService.submitReview({
+        orderId: this.selectedOrder.id,
+        rating: this.rating,
+        comment: this.comment,
+      });
+
+      const alert = await this.alertController.create({
+        header: 'Review Submitted',
+        message: 'Thank you for your review!',
+        buttons: ['OK'],
+      });
+      await alert.present();
+      this.closeReviewModal();
+    } catch (error) {
+      console.error('Failed to submit review:', error);
+      const alert = await this.alertController.create({
+        header: 'Submission Failed',
+        message: 'There was an error submitting your review. Please try again.',
+        buttons: ['OK'],
+      });
+      await alert.present();
+    }
   }
 }

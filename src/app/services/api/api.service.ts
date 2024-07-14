@@ -325,4 +325,15 @@ export class ApiService {
     return this.get('couriers');
   }
   
+  verifyEmailOtp(payload: any): Observable<any> {
+    return this.post('confirm-email-otp', payload);
+  }
+
+  resendEmailOtp(email: string): Observable<any> {
+    return this.post('resend-email-otp', { email });
+  }
+
+  getNotification(): Observable<any> {
+    return this.get('notifications');
+  }
 }

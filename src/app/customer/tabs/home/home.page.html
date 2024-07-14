@@ -2,6 +2,7 @@
   <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
+
   <!-- Top Bar -->
   <div class="top-bar" lines="none">
     <ion-grid>
@@ -10,22 +11,18 @@
           <h1>Shop</h1>
         </ion-col>
         <ion-col size="7">
-          <ion-searchbar placeholder="Search"></ion-searchbar>
+          <ion-searchbar placeholder="Search" (ionFocus)="goToSearchPage()"></ion-searchbar>
         </ion-col>
-        <ion-col size="1">
-          <ion-button (click)="filterProducts('all')">
-            <ion-icon slot="icon-only" name="funnel-outline"></ion-icon>
-          </ion-button>
-        </ion-col>
-        <ion-col size="1">
+        <ion-col size="2">
           <ion-button (click)="goToNotifications()">
             <ion-icon slot="icon-only" name="notifications-outline"></ion-icon>
+            <span *ngIf="hasNewNotifications" class="green-badge"></span>
           </ion-button>
         </ion-col>
       </ion-row>
       <ion-row>
         <div class="collection-section">
-          <swiper-container pager="true">
+          <swiper-container [spaceBetween]="10" [pagination]="{ clickable: true }" color="primary">
             <swiper-slide *ngFor="let image of collectionImages">
               <ion-card class="collection-card" [style.backgroundImage]="'url(' + image.imageUrl + ')'">
                 <div class="collection-slide">
@@ -45,8 +42,8 @@
     </ion-grid>
   </div>
 
-   <!-- Categories Section -->
-   <div class="categories">
+  <!-- Categories Section -->
+  <div class="categories">
     <ion-row>
       <ion-col size="8">
         <h2>Categories</h2>
@@ -58,17 +55,31 @@
         </ion-button>
       </ion-col>
     </ion-row>
-    <ion-slides class="categories-container" [options]="slideOpts">
-      <ion-slide *ngFor="let category of mainCategories" (click)="filterProducts(category.name)">
+
+    <!-- Swiper Container -->
+    <swiper-container [slidesPerView]="'4'" [spaceBetween]="10" [freeMode]="true" class="categories-container">
+      <!-- Loop through categories -->
+      <!-- Manually add "All" category -->
+      <swiper-slide (click)="filterProducts('All')">
         <div class="category">
           <div class="category-circle">
-            <ion-icon [name]="categoryIcons[category.name]"></ion-icon>
+            <ion-icon [name]="categoryIcons['All']"></ion-icon>
           </div>
-          <p>{{ category.name }}</p>
+          <p>All</p>
         </div>
-      </ion-slide>
-      
-    </ion-slides>
+      </swiper-slide>
+      <ng-container *ngFor="let category of mainCategories">
+        <swiper-slide (click)="filterProducts(category.name)">
+          <div class="category">
+            <div class="category-circle">
+              <ion-icon [name]="categoryIcons[category.name]"></ion-icon>
+            </div>
+            <p>{{ category.name }}</p>
+          </div>
+        </swiper-slide>
+      </ng-container>
+    </swiper-container>
+
   </div>
 
   <!-- Products Section -->
@@ -77,9 +88,9 @@
     <ion-row>
       <ion-col sizeXs="6" sizeSm="4" sizeMd="3" sizeLg="2" sizeXl="2" *ngFor="let product of filteredProducts">
         <ion-card (click)="goToProductDetail(product.id)">
-          <div class="image">
+          <ion-card class="image">
             <div *ngIf="product.promotion" class="discount-badge">{{ product.discount }}%</div>
-            <ion-img [src]="product.imageUrl" [alt]="product.title"></ion-img>
+            <ion-img [src]="product.imageUrl" [alt]=""></ion-img>
             <div class="card-actions">
               <ion-button fill="clear" (click)="addToWishlist($event, product)">
                 <ion-icon name="heart-outline"></ion-icon>
@@ -91,35 +102,37 @@
                 <ion-icon name="share-social-outline"></ion-icon>
               </ion-button>
             </div>
-          </div>
+          </ion-card>
           <ion-card-header>
             <ion-row>
-              <ion-col size="6">
-                <ion-card-subtitle>
-                  {{ product.subcategories[0]?.main_category.name }}
-                </ion-card-subtitle>
+              <ion-col size="12">
+                <ion-card-subtitle class="category">{{ product.subcategories[0]?.main_category.name
+                  }}</ion-card-subtitle>
+                <ion-card-title class="product-name">{{ product.name }}</ion-card-title>
               </ion-col>
-              <ion-col size="6">
-                <ion-card-subtitle class="star">
-                  <ion-icon *ngFor="let star of getStars(product.rating); let i = index"
-                    [name]="star ? 'star' : 'star-outline'"></ion-icon>
-                </ion-card-subtitle>
+            </ion-row>
+            <ion-row>
+              <ion-col size="8">
+                <ion-badge class="product-style">{{ product.styles[0]?.name }}</ion-badge>
+              </ion-col>
+              <ion-col size="4" class="rating">
+                <div class="rating-box">
+                  <ion-icon name="star"></ion-icon>
+                  <span>{{ product.rating || 0.00 }}</span>
+                </div>
               </ion-col>
             </ion-row>
             <ion-row>
               <ion-col size="12">
-                <ion-badge>{{ product.styles[0]?.name }}</ion-badge>
-              </ion-col>
-              <ion-col size="12">
-                <ion-card-title>{{ product.name }}</ion-card-title>
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col size="6">
                 <p class="price">
-                  Rp{{ product.price }}
-                  <span *ngIf="product.promotion" class="old-price">Rp{{ product.oldPrice }}</span>
+                  {{ formatPrice(product.price) }}
+                  <span *ngIf="product.promotion" class="old-price">{{ formatPrice(product.oldPrice) }}</span>
                 </p>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="6" class="text-right">
+                <p class="sold">{{ product.sell || 0 }} Terjual</p>
               </ion-col>
               <ion-col size="6" class="text-right">
                 <div>

@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { Storage } from '@ionic/storage';
 import { Router } from '@angular/router';
+import { ApiService } from 'src/app/services/api/api.service';
 
 @Component({
   selector: 'app-otp',
@@ -16,13 +18,20 @@ export class OtpPage implements OnInit, AfterViewInit {
   @ViewChild('otp6') otp6!: ElementRef;
 
   otpCode: string = '';
-
+  email: string = '';
+  otp: string = '';
   selectedOption!: string;
 
-  constructor(private navCtrl: NavController, private router: Router) { }
+  constructor(
+    private navCtrl: NavController,
+    private router: Router,
+    private storage: Storage,
+    private apiService: ApiService
+  ) { }
 
-  ngOnInit() {
-    this.selectedOption = 'whatsapp'; // Default option
+  async ngOnInit() {
+    await this.storage.create();
+    this.email = await this.storage.get('email') || '';
   }
 
   ngAfterViewInit() {
@@ -74,40 +83,42 @@ export class OtpPage implements OnInit, AfterViewInit {
   }
 
   verifyOtp() {
-    const correctOtp = '123456'; // This should be the OTP code sent to the user's phone
-    if (this.otpCode === correctOtp) {
-      setTimeout(() => {
-        this.router.navigate(['/new-password']);
-      }, 500);
-    } else {
-      // Handle incorrect OTP
-      console.error('Incorrect OTP');
-    }
+    const payload = { otp: this.otpCode };
+    console.log('Verifying OTP with payload:', payload);
+
+    this.apiService.verifyEmailOtp(payload).subscribe(
+      (response) => {
+        if (response.token) {
+          console.log('OTP verified successfully', response);
+
+          // Store the bearer token in localStorage
+          localStorage.setItem('bearerToken', response.token);
+
+          // Navigate to the preferences page
+          this.router.navigate(['/preference']);
+        } else {
+          console.error('Invalid OTP response');
+        }
+      },
+      (error) => {
+        console.error('Error verifying OTP', error);
+      }
+    );
   }
 
   resendCode() {
-    // Handle resend code logic
-    console.log('Resend code clicked');
+    const email = this.email;
+    this.apiService.resendEmailOtp(email).subscribe(
+      (response) => {
+        console.log('OTP resent successfully');
+      },
+      (error) => {
+        console.error('Error resending OTP', error);
+      }
+    );
   }
 
   selectOption(option: string) {
     this.selectedOption = option;
-  }
-
-  next() {
-    switch (this.selectedOption) {
-      case 'whatsapp':
-        // Implement WhatsApp password recovery here
-        break;
-      case 'email':
-        this.navCtrl.navigateForward('/register');
-        break;
-      default:
-        // Handle default case or show an error
-        break;
-    }
-  }
-  SendAgain(){
-    
   }
 }

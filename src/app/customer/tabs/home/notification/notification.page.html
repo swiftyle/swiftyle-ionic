@@ -3,7 +3,7 @@
     <ion-grid>
       <ion-row class="bar">
         <ion-col size="12">
-          <h1>Notification <ion-badge>0</ion-badge></h1>
+          <h1>Notification <ion-badge>{{ notifications.length }}</ion-badge></h1>
         </ion-col>
       </ion-row>
       <ion-row>
@@ -14,46 +14,31 @@
   </div>
 
   <div class="notification-container">
-    <div class="promo-box">
-      <ion-label>Promo Swiftyle</ion-label>
-      <ion-icon name="chevron-forward-outline" class="promo-icon"></ion-icon>
-    </div>
     <div class="section-title">Update Pesanan</div>
-    <div class="notification-box">
-      <ion-icon name="notifications-outline" class="icon"></ion-icon>
-      <div class="notification-details">
-        <div class="notification-title">Pesanan Selesai</div>
-        <div class="notification-text">Pesanan 201932084944727 telah selesai.</div>
-        <div class="notification-time">17-06-2024 13:22</div>
-      </div>
-      <ion-icon name="chevron-forward-outline" class="chevron-icon"></ion-icon>
-    </div>
-    <div class="notification-box">
-      <ion-icon name="notifications-outline" class="icon"></ion-icon>
-      <div class="notification-details">
-        <div class="notification-title">Pesanan Selesai</div>
-        <div class="notification-text">Pesanan COD 237942462732 telah dikonfirmasi.</div>
-        <div class="notification-time">17-06-2024 13:22</div>
-      </div>
-      <ion-icon name="chevron-forward-outline" class="chevron-icon"></ion-icon>
-    </div>
-    <div class="notification-box">
-      <ion-icon name="notifications-outline" class="icon"></ion-icon>
-      <div class="notification-details">
-        <div class="notification-title">Konfirmasi Penerimaan Pesanan</div>
-        <div class="notification-text">Jika kamu belum menerima pesanan 237942462732, pastikan kamu sudah melakukan pengecekan ke keluarga/lingkungan sekitar. Jika produk tidak lengkap/rusak, kamu dapat mengajukan pengembalian dana.</div>
-        <div class="notification-time">17-06-2024 13:22</div>
-      </div>
-      <ion-icon name="chevron-forward-outline" class="chevron-icon"></ion-icon>
-    </div>
-    <div class="notification-box">
-      <ion-icon name="notifications-outline" class="icon"></ion-icon>
-      <div class="notification-details">
-        <div class="notification-title">Update Pengiriman Pesanan</div>
-        <div class="notification-text">Estimasi tiba pesanan 237942462732 telah diperbarui dari 17-06-2024 menjadi 23-06-2024</div>
-        <div class="notification-time">17-06-2024 13:22</div>
-      </div>
-      <ion-icon name="chevron-forward-outline" class="chevron-icon"></ion-icon>
-    </div>
+    <ng-container *ngIf="!isLoading; else loading">
+      <ng-container *ngFor="let notification of notifications">
+        <div class="notification-box">
+          <ion-icon
+            *ngIf="notification.type === 'OrderCreated'"
+            name="cube-outline"
+            class="icon"
+          ></ion-icon>
+          <ion-icon
+            *ngIf="notification.type === 'OrderDelivered'"
+            name="car-outline"
+            class="icon"
+          ></ion-icon>
+          <div class="notification-details">
+            <div class="notification-time">{{ formatTimestamp(notification.timestamp) }}</div>
+            <div class="notification-title">{{ translateType(notification.type) }}</div>
+            <div class="notification-text">{{ notification.message }}</div>
+          </div>
+        </div>
+      </ng-container>
+    </ng-container>
+    <ng-template #loading>
+      <ion-spinner name="crescent"></ion-spinner>
+      <div>Loading notifications...</div>
+    </ng-template>
   </div>
 </ion-content>

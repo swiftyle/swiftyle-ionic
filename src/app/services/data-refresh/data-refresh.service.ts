@@ -71,9 +71,6 @@ export class DataRefreshService {
     return this.refreshService(() => this.promotionService.loadCollectionImages());
   }
 
-
-  
-
   handleRefresh(event: any): void {
     setTimeout(() => {
       Promise.all([

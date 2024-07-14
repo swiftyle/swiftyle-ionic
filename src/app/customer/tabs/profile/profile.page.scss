@@ -194,8 +194,12 @@ h1 {
   font-weight: 500;
 }
 
-ion-img {
-  width: 100%;
-  height: auto;
+ion-col {
+  border-color: 4px solid #fff;
   border-radius: 10px; /* Tambahkan jika ingin gambar berbentuk rounded */
+
+  ion-img {
+    width: 100%;
+    height: auto;
+  }
 }

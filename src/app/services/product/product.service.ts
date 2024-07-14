@@ -110,11 +110,15 @@ export class ProductService {
     }
   }
 
-  getProductsByCategory(category: string): any[] {
-    return this.products.filter(
-      (product) => product.category.toLowerCase() === category.toLowerCase()
-    );
+  getProductsByMainCategory(category: string): any[] {
+    if (!category) return [];
+  
+    return this.products.filter((product: any) => {
+      const mainCategory = product?.main_category?.name;
+      return mainCategory && mainCategory.toLowerCase() === category.toLowerCase();
+    });
   }
+  
 
   private async showToast(message: string, color: string) {
     const toast = await this.toastController.create({

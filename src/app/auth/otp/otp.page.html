@@ -1,12 +1,12 @@
 <ion-content>
   <div class="container">
     <img src="assets/images/bg/password-recovery.png" class="background-image" alt="" />
-    <div class="profile-pic">
+    <!-- <div class="profile-pic">
       <img src="assets/images/profile/avatar-1.jpeg" alt="Profile Picture">
-    </div>
+    </div> -->
     <h2>Verify OTP</h2>
-    <p>Enter 6-digits code we sent you on your phone number</p>
-    <p class="phone-number">+62******00</p>
+    <p>Enter the 6-digit code sent to your email</p>
+    <p class="email">{{ email }}</p>
     <div class="code-input">
       <input type="text" maxlength="1" class="otp-input" id="otp-1" #otp1 (input)="moveToNext($event, 'otp-2')" placeholder="•" autofocus>
       <input type="text" maxlength="1" class="otp-input" id="otp-2" #otp2 (input)="moveToNext($event, 'otp-3')" placeholder="•">
@@ -15,9 +15,6 @@
       <input type="text" maxlength="1" class="otp-input" id="otp-5" #otp5 (input)="moveToNext($event, 'otp-6')" placeholder="•">
       <input type="text" maxlength="1" class="otp-input" id="otp-6" #otp6 (input)="moveToNext($event, null)" placeholder="•">
     </div>
-    <p>Don’t receive OTP? <a (click)="SendAgain">Send Again</a></p>
-    <div class="cancel-link">
-      <a href="reset-password">Cancel</a>
-    </div>
+    <p>Didn't receive the OTP? <a (click)="resendCode()">Send Again</a></p>
   </div>
 </ion-content>

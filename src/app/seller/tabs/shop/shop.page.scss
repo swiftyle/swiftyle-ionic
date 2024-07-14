@@ -163,7 +163,7 @@
 
 .product-card img {
     border-radius: 10px;
-    max-width: 100%;
+    max-width: 128px;
     height: auto;
 }
 
@@ -198,10 +198,10 @@
 
 .fixed-footer {
     position: fixed;
-    bottom: 0;
-    width: 85%;
+    bottom: -38px;
+    width: 92%;
     height: 10vh;
-    margin-left: 12px;
+    // margin-left: 12px;
     justify-content: center;
     background: #ffffff;
     z-index: 2;

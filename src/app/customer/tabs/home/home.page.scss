@@ -13,6 +13,7 @@ ion-content {
       position: absolute;
       top: 1.3%;
     }
+
     ion-row {
       width: 100%;
 
@@ -36,6 +37,17 @@ ion-content {
       }
     }
 
+    .green-badge {
+      position: absolute;
+      top: 0px;
+      right: 8px;
+      width: 8px;
+      height: 8px;
+      background-color: var(--ion-color-success);
+      border-radius: 50%;
+    }
+    
+
     ion-searchbar {
       --background: #fff;
       --color: #000;
@@ -49,7 +61,7 @@ ion-content {
       overflow: hidden;
       width: 100%;
       position: absolute;
-      right: 0.5%;
+      right: -7px;
       top: 8%;
 
       swiper-container {
@@ -162,22 +174,22 @@ ion-content {
     margin-top: 15%;
     padding: 1rem;
     background-color: #fff;
-  
+
     ion-row {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 1rem;
-  
+
       h2 {
         margin: 0;
       }
-  
+
       .see-all {
         display: flex;
         align-items: center;
         justify-content: flex-end;
-  
+
         ion-button {
           --color: var(--ion-color-primary);
           --background: transparent;
@@ -185,27 +197,29 @@ ion-content {
           --padding-start: 0;
           --padding-end: 0;
           font-size: 14px;
-  
+
           ion-icon {
             margin-left: 4px;
           }
         }
       }
     }
-  
+
     .categories-container {
       display: flex;
       justify-content: space-around;
-      gap: 1rem; /* Menambahkan gap antara elemen kategori */
+      gap: 1rem;
+      /* Menambahkan gap antara elemen kategori */
     }
-  
+
     .category {
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
-      margin: 0 0.5rem; /* Menambahkan margin horizontal */
-      
+      margin: 0 0.5rem;
+      /* Menambahkan margin horizontal */
+
       .category-circle {
         width: 60px;
         height: 60px;
@@ -216,13 +230,13 @@ ion-content {
         justify-content: center;
         margin-bottom: 0.5rem;
       }
-  
+
       ion-icon {
         font-size: 30px;
       }
     }
   }
-  
+
 
   .products {
     margin-top: -7%;
@@ -236,6 +250,7 @@ ion-content {
     }
 
     ion-row {
+      justify-content: space-around;
       ion-col {
         padding: 0px;
       }
@@ -243,24 +258,28 @@ ion-content {
   }
 
   ion-card {
-    margin: 10px;
+    
     position: relative;
-    border-radius: 23px;
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1608);
+    width: 90%;
 
     .image {
       position: relative;
-      width: 100%;
-      height: 171px; /* Height of the image container */
-      overflow: hidden;
+      width: 89%;
+      height: 175px; /* Height of the image container */
+      --border-radius: 10px; /* Added border-radius to the container */
+  
+      object-fit: cover;
 
       ion-img {
         width: 100%;
         height: 100%;
-        object-fit: cover; /* Ensure image fits within the container */
+        object-fit: cover;
+        border-radius: 10px; /* Ensure image fits within the container */
       }
-
+  
       .discount-badge {
         position: absolute;
         top: 10px;
@@ -269,7 +288,7 @@ ion-content {
         color: white;
         padding: 5px;
         border-radius: 50%;
-        font-size: 10px;
+        font-size: 12px;
         z-index: 10;
       }
     }
@@ -278,69 +297,107 @@ ion-content {
   ion-card-header {
     position: relative;
     background-color: #fff;
+    padding: 8px 8px;
 
     ion-row {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      margin-bottom: 0px;
+      /* Atur margin bottom untuk mengurangi jarak antar baris */
+
+      &:last-child {
+        margin-bottom: 0;
+        /* Hilangkan margin bottom pada baris terakhir */
+      }
     }
 
-    .star {
-      font-size: 10px;
-      color: #FBD103;
-      display: flex;
-      flex-direction: row;
-      position: absolute;
-      right: -5px;
-    }
-    .price {
+    .category {
       font-size: 12px;
       color: var(--ion-color-primary);
+      font-weight: bold;
     }
 
+    .product-name {
+      font-size: 12px;
+      font-weight: bold;
+      color: #333;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      /* Limit to 2 lines */
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .product-style {
+      font-size: 13px;
+      background-color: #fff;
+      color: var(--ion-color-primary);
+      border: 1px solid var(--ion-color-primary);
+      border-radius: 4px;
+      padding: 2px 4px;
+      margin-top: 6px;
+      display: inline-block;
+    }
+
+    .rating {
+      display: flex;
+      align-items: flex-end;
+      margin-top: 4px;
+
+      .rating-box {
+        display: flex;
+        align-items: center;
+        padding: 2px 6px;
+        border: 1px solid #FBD103;
+        border-radius: 4px;
+        background-color: #fff;
+        margin-right: 8px;
+
+        ion-icon {
+          color: #FBD103;
+          margin-right: 4px;
+        }
+
+        span {
+          font-size: 12px;
+          color: #000;
+        }
+      }
+    }
+
+    .sold {
+      font-size: 10px;
+      color: #888;
+      margin-top: 2px;
+
+    }
+
+    .price {
+      font-size: 14px;
+      color: var(--ion-color-primary);
+      margin-top: 2px;
+      font-weight: 500;
+      .old-price {
+        text-decoration: line-through;
+        color: #888;
+        margin-left: 10px;
+      }
+    }
+
+    ion-button {
+      font-size: 14px;
+      color: var(--ion-color-primary);
+      margin-top: -10px;
+    }
     .shop-name {
       font-size: 8px;
       color: #888;
-      text-align: right;
-      padding: 3px;
+      text-align: center;
+      margin-top: 10px;
+      margin-left: 2px;
     }
-  }
-
-  ion-card-subtitle {
-    font-size: 10px;
-    color: #888;
-    text-align: left;
-  }
-
-  ion-card-title {
-    font-size: 12px;
-    font-weight: bold;
-    text-align: left;
-  }
-
-  .rating {
-    font-size: 10px;
-    color: #FBD103;
-    display: flex;
-    flex-direction: row;
-    position: absolute;
-    right: 0px;
-  }
-
-  ion-card-content {
-    text-align: center;
-    background-color: #fff;
-  }
-
-  .price {
-    font-size: 12px;
-    color: var(--ion-color-primary);
-  }
-
-  .old-price {
-    text-decoration: line-through;
-    color: #888;
-    margin-left: 10px;
   }
 
   .card-actions {
@@ -365,6 +422,8 @@ ion-content {
       --color: var(--ion-color-primary);
     }
   }
+
+
 
   /* Footbar Styles */
   ion-footer {
@@ -430,6 +489,7 @@ ion-content {
   from {
     transform: translateY(100%);
   }
+
   to {
     transform: translateY(0);
   }

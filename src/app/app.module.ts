@@ -15,6 +15,7 @@ import { AuthInterceptorService } from './services/auth/interceptor.service';
 import { RefreshDirective } from './directives/refresh.directive';
 import { DataRefreshService } from './services/data-refresh/data-refresh.service';
 import { IonicStorageModule } from '@ionic/storage-angular';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,9 @@ import { IonicStorageModule } from '@ionic/storage-angular';
     PreferencePageModule,
     ProductModalPageModule,
     HttpClientModule,
-    IonicStorageModule.forRoot() // Add IonicStorageModule here
+    IonicStorageModule.forRoot(), // Add IonicStorageModule here
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },

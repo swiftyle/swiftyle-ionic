@@ -22,20 +22,14 @@ ion-badge {
 .header {
   margin-left: 12px;
   display: flex;
-  // align-items: center;
   width: 100%;
-  // padding: 15px;
   box-sizing: border-box;
   color: #fff;
 
   h2 {
-      font-size: 1.6rem;
-      font-weight: 700;
+    font-size: 1.6rem;
+    font-weight: 700;
   }
-
-  /* Set the text color to match the icon color */
-  // border-bottom-left-radius: 20px;
-  // border-bottom-right-radius: 20px;
 }
 
 .notification-container {
@@ -44,73 +38,79 @@ ion-badge {
   padding: 16px;
 
   .promo-box {
-      display: flex;
-      align-items: center;
-      background: white;
-      border-radius: 8px;
-      padding: 16px;
-      margin-bottom: 16px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      position: relative;
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
 
-      ion-label {
-          flex: 1;
-      }
+    ion-label {
+      flex: 1;
+    }
 
-      .promo-icon {
-          font-size: 24px;
-          color: #FF4081;
-      }
+    .promo-icon {
+      font-size: 24px;
+      color: var(--ion-color-primary);
+    }
   }
 
   .section-title {
-      font-weight: bold;
-      margin: 16px 0;
+    font-weight: bold;
+    margin: 16px 0;
   }
 
   .notification-box {
-      display: flex;
-      align-items: center;
-      background: white;
-      border-radius: 8px;
-      padding: 16px;
-      margin-bottom: 16px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      position: relative;
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
 
-      .icon {
-          font-size: 24px;
-          color: #FF4081;
-          margin-right: 16px;
+    .icon {
+      font-size: 24px;
+      color: var(--ion-color-primary);
+      margin-right: 16px;
+    }
+
+    .notification-details {
+      flex: 1;
+
+      .notification-title {
+        font-weight: bold;
+        margin-bottom: 8px;
       }
 
-      .notification-details {
-          flex: 1;
-
-          .notification-title {
-              font-weight: bold;
-              margin-bottom: 8px;
-          }
-
-          .notification-text {
-              font-size: 14px;
-              line-height: 1.4;
-              margin-bottom: 8px;
-          }
-
-          .notification-time {
-              font-size: 12px;
-              color: gray;
-          }
+      .notification-text {
+        font-size: 14px;
+        line-height: 1.4;
+        margin-bottom: 8px;
       }
 
-      .chevron-icon {
-          font-size: 24px;
-          color: #FF4081;
+      .notification-time {
+        font-size: 12px;
+        color: gray;
       }
+    }
+
+    .chevron-icon {
+      font-size: 24px;
+      color: var(--ion-color-primary);
+    }
   }
 }
 
 .promo-box {
   margin-top: -40px;
+}
+
+.notification-box .icon {
+  font-size: 24px;
+  color: var(--ion-color-primary);
+  margin-right: 16px;
 }

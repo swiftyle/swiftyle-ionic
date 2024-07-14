@@ -2,11 +2,11 @@
   <div class="profile-header">
     <div class="profile-text">
       <ion-avatar>
-        <img [src]="userService.user.avatar" alt="Profile Picture" />
+        <img [src]="userService.user?.avatar" alt="Profile Picture" />
       </ion-avatar>
       <div class="profile-info">
-        <h2>{{ userService.user.email }}</h2>
-        <p>Pengikut {{ userService.user.followers }} | Mengikuti {{ userService.user.following }}</p>
+        <h2>{{ userService.user?.email }}</h2>
+        <p>Followers {{ userService.user?.followers }} | Following {{ userService.user?.following }}</p>
       </div>
       <div class="icon-profile">
         <div class="profile-icons">
@@ -25,7 +25,7 @@
   </div>
   <div class="welcome-container">
     <div class="welcome-message">
-      <h1>Hello, {{ userService.user.name }}!</h1>
+      <h1>Hello, {{ userService.user?.name }}!</h1>
     </div>
   </div>
   <div class="ion-padding">
@@ -39,35 +39,29 @@
         </div>
       </ion-card-content>
     </ion-card>
+
+    <!-- Recently viewed -->
     <h1>Recently viewed</h1>
-    <ion-row>
-      <ion-col>
-        <ion-img src="assets/images/products/brown-jacket.png"></ion-img>
-      </ion-col>
-      <ion-col>
-        <ion-img src="assets/images/products/green-hoodie.png"></ion-img>
-      </ion-col>
-      <ion-col>
-        <ion-img src="assets/images/products/grey-tshirt.png"></ion-img>
-      </ion-col>
-      <ion-col>
-        <ion-img src="assets/images/products/pink-crowneck.png"></ion-img>
-      </ion-col>
-      <ion-col>
-        <ion-img src="assets/images/products/brown-jacket.png"></ion-img>
-      </ion-col>
-    </ion-row>
+    <swiper-container [slidesPerView]="'5'" [spaceBetween]="10" [freeMode]="true">
+      <ng-container *ngIf="recentlyViewed && recentlyViewed.length > 0">
+        <swiper-slide *ngFor="let product of recentlyViewed">
+          <ion-img [src]="product.imageUrl"></ion-img>
+        </swiper-slide>
+      </ng-container>
+    </swiper-container>
+
+    <!-- My Orders -->
     <h1>My Orders</h1>
     <div class="shop-orders">
       <ion-chip color="secondary">To Pay</ion-chip>
-      <ion-chip color="secondary" [routerLink]="'/order'">Order</ion-chip>
+      <ion-chip color="secondary" routerLink="/order">Order</ion-chip>
       <ion-chip color="secondary" (click)="goToReceivePage()">To Receive</ion-chip>
     </div>
     <ion-card class="create-store-card" routerLink="/history">
       <ion-card-content>
         <div class="create-store-container">
           <p>History</p>
-          <ion-button fill="clear" class="arrow-button" [routerLink]="'/history'">
+          <ion-button fill="clear" class="arrow-button" routerLink="/history">
             <ion-icon slot="icon-only" name="arrow-forward-outline"></ion-icon>
           </ion-button>
         </div>

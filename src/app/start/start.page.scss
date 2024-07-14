@@ -1,3 +1,243 @@
+@keyframes fallAndSway1 {
+    0% {
+        transform: translate(80vw, -10vh) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-100vw, 110vh) rotate(-50deg);
+    }
+}
+
+@keyframes fallAndSway2 {
+    0% {
+        transform: translate(110vw, -20vh) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-110vw, 120vh) rotate(50deg);
+    }
+}
+
+@keyframes fallAndSway3 {
+    0% {
+        transform: translate(140vw, -30vh) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-120vw, 130vh) rotate(-50deg);
+    }
+}
+
+@keyframes fallAndSway4 {
+    0% {
+        transform: translate(170vw, -40vh) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-130vw, 140vh) rotate(50deg);
+    }
+}
+
+@keyframes fallAndSway5 {
+    0% {
+        transform: translate(210vw, -50vh) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-140vw, 150vh) rotate(-50deg);
+    }
+}
+
+@keyframes fallAndSway6 {
+    0% {
+        transform: translate(40vw, -60vh) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-150vw, 160vh) rotate(50deg);
+    }
+}
+
+@keyframes fallAndSway7 {
+    0% {
+        transform: translate(0vw, -70vh) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-160vw, 170vh) rotate(-50deg);
+    }
+}
+
+@keyframes fallAndSway8 {
+    0% {
+        transform: translate(250vw, -80vh) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-170vw, 180vh) rotate(50deg);
+    }
+}
+
+@keyframes fallAndSway9 {
+    0% {
+        transform: translate(160vw, -90vh) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-180vw, 190vh) rotate(-50deg);
+    }
+}
+
+@keyframes fallAndSway10 {
+    0% {
+        transform: translate(190vw, -100vh) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-190vw, 200vh) rotate(50deg);
+    }
+}
+
+@keyframes fallAndSway11 {
+    0% {
+        transform: translate(220vw, -110vh) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-200vw, 210vh) rotate(-50deg);
+    }
+}
+
+@keyframes fallAndSway12 {
+    0% {
+        transform: translate(210vw, -120vh) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-210vw, 220vh) rotate(50deg);
+    }
+}
+
+@keyframes fallAndSway13 {
+    0% {
+        transform: translate(260vw, -130vh) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-220vw, 230vh) rotate(-50deg);
+    }
+}
+
+@keyframes fallAndSway14 {
+    0% {
+        transform: translate(270vw, -140vh) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-230vw, 240vh) rotate(50deg);
+    }
+}
+
+@keyframes fallAndSway15 {
+    0% {
+        transform: translate(280vw, -150vh) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-240vw, 250vh) rotate(-50deg);
+    }
+}
+
+@keyframes fallAndSway16 {
+    0% {
+        transform: translate(290vw, -160vh) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-250vw, 260vh) rotate(50deg);
+    }
+}
+
+@keyframes fallAndSway17 {
+    0% {
+        transform: translate(300vw, -170vh) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-260vw, 270vh) rotate(-50deg);
+    }
+}
+
+@keyframes fallAndSway18 {
+    0% {
+        transform: translate(310vw, -180vh) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-270vw, 280vh) rotate(50deg);
+    }
+}
+
+@keyframes fallAndSway19 {
+    0% {
+        transform: translate(320vw, -190vh) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-280vw, 290vh) rotate(-50deg);
+    }
+}
+
+@keyframes fallAndSway20 {
+    0% {
+        transform: translate(330vw, -200vh) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-290vw, 300vh) rotate(50deg);
+    }
+}
+
+@keyframes fallAndSway21 {
+    0% {
+        transform: translate(340vw, -210vh) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-300vw, 310vh) rotate(-50deg);
+    }
+}
+
+@keyframes fallAndSway22 {
+    0% {
+        transform: translate(350vw, -220vh) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-310vw, 320vh) rotate(50deg);
+    }
+}
+
+@keyframes fallAndSway23 {
+    0% {
+        transform: translate(360vw, -230vh) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-320vw, 330vh) rotate(-50deg);
+    }
+}
+
+@keyframes fallAndSway24 {
+    0% {
+        transform: translate(370vw, -240vh) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-330vw, 340vh) rotate(50deg);
+    }
+}
+
 ion-content {
     --background: #fff;
     display: flex;
@@ -5,6 +245,182 @@ ion-content {
     align-items: center;
     position: relative;
     font-family: var(--font-family);
+
+    .petal {
+        position: absolute;
+        top: -40%;
+        right: 0;
+        background-size: cover;
+        opacity: 0.7;
+    }
+
+    .petal1 {
+        width: 20px;
+        height: 20px;
+        background-image: url('/assets/images/petal/petal1.png');
+        animation: fallAndSway1 17s infinite, fallAndSway6 8s infinite, fallAndSway3 12s infinite;
+    }
+
+    .petal2 {
+        width: 30px;
+        height: 30px;
+        background-image: url('/assets/images/petal/petal2.png');
+        animation: fallAndSway2 5s infinite, fallAndSway11 15s infinite, fallAndSway7 10s infinite;
+    }
+
+    .petal3 {
+        width: 40px;
+        height: 40px;
+        background-image: url('/assets/images/petal/petal3.png');
+        animation: fallAndSway3 12s infinite, fallAndSway10 7s infinite, fallAndSway5 14s infinite;
+    }
+
+    .petal4 {
+        width: 40px;
+        height: 40px;
+        background-image: url('/assets/images/petal/petal1.png');
+        animation: fallAndSway4 7s infinite, fallAndSway9 13s infinite, fallAndSway8 18s infinite;
+    }
+
+    .petal5 {
+        width: 50px;
+        height: 50px;
+        background-image: url('/assets/images/petal/petal2.png');
+        animation: fallAndSway5 3s infinite, fallAndSway8 12s infinite, fallAndSway1 16s infinite;
+    }
+
+    .petal6 {
+        width: 60px;
+        height: 60px;
+        background-image: url('/assets/images/petal/petal3.png');
+        animation: fallAndSway6 9s infinite, fallAndSway7 11s infinite, fallAndSway4 19s infinite;
+    }
+
+    .petal7 {
+        width: 20px;
+        height: 20px;
+        background-image: url('/assets/images/petal/petal1.png');
+        animation: fallAndSway7 20s infinite, fallAndSway6 14s infinite, fallAndSway3 15s infinite;
+    }
+
+    .petal8 {
+        width: 30px;
+        height: 30px;
+        background-image: url('/assets/images/petal/petal2.png');
+        animation: fallAndSway8 11s infinite, fallAndSway5 9s infinite, fallAndSway2 21s infinite;
+    }
+
+    .petal9 {
+        width: 40px;
+        height: 40px;
+        background-image: url('/assets/images/petal/petal3.png');
+        animation: fallAndSway9 12s infinite, fallAndSway4 8s infinite, fallAndSway12 20s infinite;
+    }
+
+    .petal10 {
+        width: 40px;
+        height: 40px;
+        background-image: url('/assets/images/petal/petal1.png');
+        animation: fallAndSway10 6s infinite, fallAndSway3 7s infinite, fallAndSway11 22s infinite;
+    }
+
+    .petal11 {
+        width: 50px;
+        height: 50px;
+        background-image: url('/assets/images/petal/petal2.png');
+        animation: fallAndSway11 10s infinite, fallAndSway2 6s infinite, fallAndSway8 17s infinite;
+    }
+
+    .petal12 {
+        width: 60px;
+        height: 60px;
+        background-image: url('/assets/images/petal/petal3.png');
+        animation: fallAndSway12 15s infinite, fallAndSway1 5s infinite, fallAndSway10 23s infinite;
+    }
+
+    .petal13 {
+        width: 20px;
+        height: 20px;
+        background-image: url('/assets/images/petal/petal1.png');
+        animation: fallAndSway13 17s infinite, fallAndSway6 8s infinite, fallAndSway3 12s infinite;
+    }
+
+    .petal14 {
+        width: 30px;
+        height: 30px;
+        background-image: url('/assets/images/petal/petal2.png');
+        animation: fallAndSway14 5s infinite, fallAndSway11 15s infinite, fallAndSway7 10s infinite;
+    }
+
+    .petal15 {
+        width: 40px;
+        height: 40px;
+        background-image: url('/assets/images/petal/petal3.png');
+        animation: fallAndSway15 12s infinite, fallAndSway10 7s infinite, fallAndSway5 14s infinite;
+    }
+
+    .petal16 {
+        width: 40px;
+        height: 40px;
+        background-image: url('/assets/images/petal/petal1.png');
+        animation: fallAndSway16 7s infinite, fallAndSway9 13s infinite, fallAndSway8 18s infinite;
+    }
+
+    .petal17 {
+        width: 50px;
+        height: 50px;
+        background-image: url('/assets/images/petal/petal2.png');
+        animation: fallAndSway17 3s infinite, fallAndSway8 12s infinite, fallAndSway1 16s infinite;
+    }
+
+    .petal18 {
+        width: 60px;
+        height: 60px;
+        background-image: url('/assets/images/petal/petal3.png');
+        animation: fallAndSway18 9s infinite, fallAndSway7 11s infinite, fallAndSway4 19s infinite;
+    }
+
+    .petal19 {
+        width: 20px;
+        height: 20px;
+        background-image: url('/assets/images/petal/petal1.png');
+        animation: fallAndSway19 20s infinite, fallAndSway6 14s infinite, fallAndSway3 15s infinite;
+    }
+
+    .petal20 {
+        width: 30px;
+        height: 30px;
+        background-image: url('/assets/images/petal/petal2.png');
+        animation: fallAndSway20 11s infinite, fallAndSway5 9s infinite, fallAndSway2 21s infinite;
+    }
+
+    .petal21 {
+        width: 40px;
+        height: 40px;
+        background-image: url('/assets/images/petal/petal3.png');
+        animation: fallAndSway21 12s infinite, fallAndSway4 8s infinite, fallAndSway12 20s infinite;
+    }
+
+    .petal22 {
+        width: 40px;
+        height: 40px;
+        background-image: url('/assets/images/petal/petal1.png');
+        animation: fallAndSway22 6s infinite, fallAndSway3 7s infinite, fallAndSway11 22s infinite;
+    }
+
+    .petal23 {
+        width: 50px;
+        height: 50px;
+        background-image: url('/assets/images/petal/petal2.png');
+        animation: fallAndSway23 10s infinite, fallAndSway2 6s infinite, fallAndSway8 17s infinite;
+    }
+
+    .petal24 {
+        width: 60px;
+        height: 60px;
+        background-image: url('/assets/images/petal/petal3.png');
+        animation: fallAndSway24 15s infinite, fallAndSway1 5s infinite, fallAndSway10 23s infinite;
+    }
 
     .container {
         text-align: center;
@@ -19,7 +435,7 @@ ion-content {
             margin-bottom: 20px;
 
             img {
-                width: 300px; // sesuaikan ukuran logo dengan kebutuhan
+                width: 300px;
                 height: auto;
             }
         }
@@ -48,12 +464,11 @@ ion-content {
             position: absolute;
             bottom: -40%;
             width: 100%;
-        
         }
 
         .login-link {
             position: absolute;
-            bottom: -50%; // sesuaikan jarak dengan kebutuhan
+            bottom: -50%;
             left: 50%;
             transform: translateX(-50%);
             display: flex;

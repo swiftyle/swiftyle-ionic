@@ -87,7 +87,7 @@ export class CartPage implements OnInit {
       const addresses = await this.addressService.loadAddresses();
       this.addresses = addresses || [];
       if (this.addresses.length > 0) {
-        this.address = `${this.addresses[0].street}, ${this.addresses[0].city}, ${this.addresses[0].state} ${this.addresses[0].postal_code}`;
+        this.address = `${this.addresses[0].street}, ${this.addresses[0].city}, ${this.addresses[0].province} ${this.addresses[0].postal_code}`;
       }
       console.log('Loaded addresses:', this.addresses);
     } catch (error) {
